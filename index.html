@@ -117,7 +117,8 @@ const CONFIG = {
     { name: "小林美家", url: "https://www.youtube.com/@linlin_miga", img: "https://yt3.googleusercontent.com/lQ4hM4boPhRDI8z97ked0DmNkR2O-jRFyFPnO-TtpozjxbzALIdu6_ml1qBkq5-7GUJdz2CdJQ=s240-c-k-c0x00ffffff-no-rj", subs: "6,090" }
   ],
   contact: {
-    email: ""     // ← 填入你們的信箱，例如 "hello@move-studio.tw"
+    email: "rick58460012@gmail.com",
+    name: "Rick"
   }
 };
 </script>
@@ -274,6 +275,7 @@ ul,ol{list-style:none}
 /* ---------- Contact ---------- */
 .contact-title{font-size:clamp(40px,6vw,72px);font-weight:700;line-height:1.08;letter-spacing:-.03em}
 .mail .caption{display:block}
+.mail-name{font-size:18px;font-weight:600;margin-top:12px}
 .mail{margin-top:var(--s-lg);padding-top:var(--s-md);border-top:1px solid var(--line)}
 .mail-addr{display:inline-block;margin-top:10px;font-size:clamp(24px,3.4vw,40px);font-weight:600;letter-spacing:-.01em;word-break:break-all;border-bottom:1px solid var(--fg);line-height:1.3}
 .mail-actions{display:flex;gap:12px;margin-top:var(--s-md);flex-wrap:wrap}
@@ -502,7 +504,8 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
         <h2 class="contact-title">Let’s make<br>something move.</h2>
         <p style="margin-top:var(--s-md)">告訴我們你的想法，我們會在 2 個工作天內回覆，並提供初步的企劃方向與報價。</p>
         <div class="mail rv">
-          <span class="caption mute">Email</span>
+          <span class="caption mute">Contact</span>
+          <div class="mail-name" id="mail-name"></div>
           <a class="mail-addr" id="mail-addr" href="#">［你的 Email］</a>
           <div class="mail-actions">
             <a class="btn" id="mail-btn" href="#">寫信給我們</a>
@@ -681,6 +684,7 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
   /* 聯絡信箱 */
   const email = CONFIG.contact.email;
   const addr = document.getElementById('mail-addr'), mailBtn = document.getElementById('mail-btn'), copyBtn = document.getElementById('copy-btn');
+  document.getElementById('mail-name').textContent = CONFIG.contact.name || '';
   if (email){
     addr.textContent = email;
     addr.href = mailBtn.href = 'mailto:' + email + '?subject=' + encodeURIComponent('【合作洽詢】');
