@@ -44,9 +44,7 @@ const CONFIG = {
       {"id": "_5QKVF8Tz2I", "title": "2026 居家提案！客廳一定要有沙發？打破傳統格局！用輝葉 AI 追夢椅打造「ME TIME」角落！｜小林美家", "client": "小林美家 | 爾聲空間打造你的夢想家"},
       {"id": "SFvLtN1Lb5U", "title": "只有29坪卻不壓迫！從三房變兩房 → 住進寬敞法式中古奶油宅｜#小林開箱 #法式中古奶油風 #新婚宅開箱  #爾聲空間 #室內設計 #室內裝潢 #儀式感", "client": "小林美家 | 爾聲空間打造你的夢想家"},
       {"id": "bxwgi3t623s", "title": "如果重來...這些我不會做！設計師入住自己家1.5年的真心話｜小林美家", "client": "小林美家 | 爾聲空間打造你的夢想家"},
-      {"id": "tBcHb1ipQcE", "title": "《candy》 簽唱會邱勝翊&邱宇辰", "client": ""},
-      {"id": "MtgTfpKHm-g", "title": "水離子高速吹風機-小口琴_詹子晴", "client": ""},
-      {"id": "3nLrPTn8odY", "title": "HUAWEI WATCH FIT 3_莫娜", "client": ""},
+      {"id": "MtgTfpKHm-g", "title": "水離子高速吹風機-小口琴_詹子晴", "client": "", "cat": "sponsored"},
       {"id": "X9dDEl4xtUE", "title": "金鐘獎Vlog_夏和熙", "client": ""},
       {"id": "B779FV-KPnk", "title": "宇宙星辰music party_邱宇辰", "client": ""},
       {"id": "jD9kIYVjPt8", "title": "CeraVe適樂膚_詹子晴", "client": ""},
@@ -81,7 +79,9 @@ const CONFIG = {
       {"id": "doZ44eqiifM", "title": "男生留長髮要注意哪些點？過渡期怎麼撐過！？男生長髮優缺點一次告訴你｜VIC CHEN", "client": "Vic 陳雋希"}
     ],
     short: [ /* Shorts 也是填影片 ID，例如 youtube.com/shorts/XXXX → "XXXX" */ ],
-    event: [ ]
+    event: [
+      {"id": "tBcHb1ipQcE", "title": "《candy》 簽唱會邱勝翊&邱宇辰", "client": ""}
+    ]
   },
 
   // 聯絡資訊
@@ -468,6 +468,7 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line)}
       <div class="subtabs" aria-label="YouTube 長片分類">
         <button class="chip" data-sub="channel" aria-pressed="true">頻道合作<sup></sup></button>
         <button class="chip" data-sub="reality" aria-pressed="false">實境秀<sup></sup></button>
+        <button class="chip" data-sub="sponsored" aria-pressed="false">業配拍攝<sup></sup></button>
       </div>
       <div id="w-long"></div>
     </div>
@@ -667,7 +668,8 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line)}
   function renderLong(){
     const all = CONFIG.works.long || [];
     document.getElementById('c-long').textContent = String(all.length).padStart(2,'0');
-    const subs = { channel: all.filter(w => w.cat !== 'reality'), reality: all.filter(w => w.cat === 'reality') };
+    const subs = { channel: all.filter(w => !w.cat), reality: all.filter(w => w.cat === 'reality'), sponsored: all.filter(w => w.cat === 'sponsored') };
+    const subTitles = { reality: '圍棋實境秀｜弈世界玩家 · 嘉嘉老師GO', sponsored: '業配拍攝' };
     const box = document.getElementById('w-long');
     const groupHTML = (name, items, limit) => `
       <div class="group">
@@ -676,8 +678,8 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line)}
         ${items.length > limit ? `<div class="more-wrap"><button class="more" data-more>看更多（${items.length - limit} 支）</button></div>` : ''}
       </div>`;
     const draw = sub => {
-      if (sub === 'reality'){
-        box.innerHTML = groupHTML('圍棋實境秀｜弈世界玩家 · 嘉嘉老師GO', subs.reality, 99);
+      if (sub !== 'channel'){
+        box.innerHTML = groupHTML(subTitles[sub], subs[sub], 99);
         return;
       }
       const groups = new Map();
