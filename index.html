@@ -19,6 +19,7 @@
 /* ============================================================
    ✏️  網站設定：之後補作品，只要改這裡就好
    作品清單的順序 = 網站上的順序（最新的放最上面）
+   每支作品填 date（上架日期），網站會自動依日期「新的在前」排序
    cat 可填 "reality"（實境秀）或 "sponsored"（業配拍攝）；不填就歸在「頻道合作」，依 client 分組
    ============================================================ */
 const CONFIG = {
@@ -29,59 +30,67 @@ const CONFIG = {
   },
   works: {
     long: [
-      {"id": "UBe_mhVOEo8", "title": "「爸媽生存王系列」帶兩個混血寶寶玩台灣人的童年！劍湖山親子兩天一夜，蒳家人誰最有膽？Taiwan Amusement Park Challenge with Kids", "client": "佳娜祖雄“蒳家人” TT FAMILY"},
-      {"id": "Z_QzWwQFdbY", "title": "【圍棋實境秀EP8】終局之戰黑嘉嘉當裁判！誰能贏下關鍵對弈奪得冠軍？｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
-      {"id": "CLoWV3o5x0U", "title": "【圍棋實境秀EP7】「地獄級難度」盲棋還讓6子！亞運金牌這次會輸給2個圍棋菜鳥嗎？｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
-      {"id": "Ke67iKp8TaM", "title": "【圍棋實境秀EP6】讀秒下棋像拆炸彈！心跳飆破150連醫師都驚訝 ft.賴廷榮醫師｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
-      {"id": "5uPsjY-ThYI", "title": "【圍棋實境秀EP5】5分鐘就被小朋友「震撼教育」😮 偶像們移地訓練大崩潰｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
-      {"id": "j15H6JKFuxI", "title": "【圍棋實境秀EP4】隱藏攝影機偷偷測專注力！3干擾+1魔王她們能挑戰成功？｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
-      {"id": "aVTcDL4HoQE", "title": "【圍棋實境秀EP3】1分之差生死戰！她想逆轉就要全答對｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
-      {"id": "WnIGgVe9xew", "title": "【圍棋實境秀EP2】第一堂課就爆衝突？「秘密任務」後師生還能聯手搶分嗎？｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
-      {"id": "Q4twdIxRMYc", "title": "【圍棋實境秀EP1】女偶像勇闖弈世界！職業九段 vs 20 年名師..誰能讓學生3個月從0到贏？｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
-      {"id": "Slr5yVvrzUw", "title": "真假黑嘉嘉對決！五人聯手能打敗最高等級「AI黑嘉嘉」嗎？ ft.亞運金牌許皓鋐、職業九段蕭正浩", "client": "嘉嘉老師GO"},
-      {"id": "Xe5PwpBgGPg", "title": "黑嘉嘉手忙腳亂笑到不行！連亞運金牌也被難倒的「圍棋術語黑白猜」", "client": "嘉嘉老師GO"},
-      {"id": "Nxvf0QETbqw", "title": "職業棋士的大腦太可怕！黑嘉嘉看1分鐘棋譜就認出自己的比賽？", "client": "嘉嘉老師GO"},
-      {"id": "_5QKVF8Tz2I", "title": "2026 居家提案！客廳一定要有沙發？打破傳統格局！用輝葉 AI 追夢椅打造「ME TIME」角落！｜小林美家", "client": "小林美家 | 爾聲空間打造你的夢想家"},
-      {"id": "SFvLtN1Lb5U", "title": "只有29坪卻不壓迫！從三房變兩房 → 住進寬敞法式中古奶油宅｜#小林開箱 #法式中古奶油風 #新婚宅開箱  #爾聲空間 #室內設計 #室內裝潢 #儀式感", "client": "小林美家 | 爾聲空間打造你的夢想家"},
-      {"id": "bxwgi3t623s", "title": "如果重來...這些我不會做！設計師入住自己家1.5年的真心話｜小林美家", "client": "小林美家 | 爾聲空間打造你的夢想家"},
-      {"id": "MtgTfpKHm-g", "title": "水離子高速吹風機-小口琴_詹子晴", "client": "", "cat": "sponsored"},
-      {"id": "jD9kIYVjPt8", "title": "CeraVe適樂膚_詹子晴", "client": "", "cat": "sponsored"},
-      {"id": "8uB86H-i_ZQ", "title": "潮流媒體界💫首次熱血籃球賽 3 對 3！街星男籃夢幻隊拚了❤️‍🔥開賽前就掛彩🫨？到底能不能贏啊!!!", "client": "JUKSY 街星"},
-      {"id": "DIFZnVpasRM", "title": "最熱門的醫美項目前三名 你加一嗎？［小晴人BabyChing ］#醫美  #醫美推薦  #醫美診所", "client": "小晴人BabyChing"},
-      {"id": "tuvZiq-ROTs", "title": "平價又好看！六款顏色都超美的 HUAWEI WATCH FIT 3 竟然可以接 LINE 電話？iOS、Android 都支援 iPhone 也可用【莫娜 Moana】", "client": "莫娜 Moana in the wood"},
-      {"id": "VfEjNQDO1x8", "title": "Check2Check x P.STAR 淨顏溫感水秒機", "client": "", "cat": "sponsored"},
-      {"id": "u9zo67Qb_h8", "title": "高CP值電腦周邊新品搶先看 ! darkFlash 今年推出的機殼、水冷、磁吸風扇、機械鍵盤【貝爾熊派】Computex 2024", "client": "貝爾熊派"},
-      {"id": "0HbNrKfoNvY", "title": "FIAT BARCHETTA 老車開箱🔥 你一定要懂的經典老車！帶你穿梭飛雅特的傳奇品牌之旅！像船一樣的雙門敞篷跑車？【 Monster Garage Classic】#fiat", "client": "Hyper Monster 猛獸俱樂部"},
-      {"id": "aVmXSoxfo84", "title": "首創結合「移動電源」的電輔車〔 Bikniks 超電力野餐行旅車 〕", "client": "小晴人BabyChing"},
-      {"id": "4W8BlgHxoHQ", "title": "施語庭《GREEN》MV 幕後花絮 Behind the scenes", "client": "硬搞娛樂 INGO Entertainment"},
-      {"id": "bQG-fm9lC4M", "title": "八三夭 [ 給想要綻放的人 ] MV 拍攝 幕後花絮：小橘分享高中綻放戀愛觀 / 差點把mv拍成業配 / 綻放詞曲mv創作大解析 / 廢棄倉庫拍出最綻放mv", "client": "八三夭 831"},
-      {"id": "k9MHY0veQEw", "title": "彌補家人白費青春 比別人更早被現實打臉我還是堅持嘻哈夢 ｜挺夢特攻隊EP1", "client": "Dcard報報"},
-      {"id": "llGozb02icA", "title": "大聲說愛 · 大破距離～Samsung Galaxy Tab S8 Ultra", "client": "小晴人BabyChing"},
-      {"id": "CLqnnZaq84A", "title": "登高計畫_2022陽明山會師大縱走We reach high from the ground", "client": "陽明交大_陽明課外組"},
-      {"id": "mHGCGc1Wijo", "title": "Alfa romeo159 全車大改造 最帥愛快女車主【Hyper Monster Garage】", "client": "Hyper Monster 猛獸俱樂部"},
-      {"id": "uMX6lHI6Tbk", "title": "「喝酒遊戲大爆料！」我到底睡過幾個人？ Feat. @tylertaile", "client": "佳娜祖雄“蒳家人” TT FAMILY"},
-      {"id": "T4FqLJwD22g", "title": "夏日花襯衫穿搭！8種花襯衫穿搭！簡單又不單調！｜VIC CHEN", "client": "Vic 陳雋希"},
-      {"id": "BHUVNlmVt44", "title": "【Costco都買什麼？闆娘精選高CP值好物推薦！兩人世界省錢小妙招】 #詹子晴丫頭 #威廉 #costco", "client": "小晴人BabyChing"},
-      {"id": "KPDBbYE69h8", "title": "｜外國女生交往前需要先試車｜外國女生如何找自己適合台灣的對象？｜長得矮再帥都不行？｜脫單企劃 EP.2", "client": "佳娜祖雄“蒳家人” TT FAMILY"},
-      {"id": "bIUkws0E_ss", "title": "顏質最高的電視【Samsung QLED 4K】讓自己生活更美好", "client": "小晴人BabyChing"},
-      {"id": "PQywJYIZFBU", "title": "夏天的北海岸怎麼玩？讓Rio和Leo帶你去😍🫶｜Dcard報報", "client": "Dcard報報"},
-      {"id": "sVh3cxpeLMg", "title": "賓士G-CLASS，G500開箱！G CAR真的是你心目中的DREAM CAR嗎？｜VIC CHEN", "client": "Vic 陳雋希"},
-      {"id": "TRE61BG6-18", "title": "開箱家裡裝潢，現代輕工業風！細節、室內設計、注意事項一次分享給你｜VIC CHEN", "client": "Vic 陳雋希"},
-      {"id": "9Tt6s7NcrDQ", "title": "男生長髮6種綁法！Man Bun、丸子頭、馬尾、公主頭小技巧一次告訴你｜VIC CHEN", "client": "Vic 陳雋希"},
-      {"id": "qPtoWon-Bkc", "title": "女裝只有0次跟無限次！聖子＆Zona 假面閨蜜約會再開結果會是...?｜Dcard報報特別企劃", "client": "Dcard報報"},
-      {"id": "doZ44eqiifM", "title": "男生留長髮要注意哪些點？過渡期怎麼撐過！？男生長髮優缺點一次告訴你｜VIC CHEN", "client": "Vic 陳雋希"}
+      {"id": "UBe_mhVOEo8", "date": "2026-10-04", "title": "「爸媽生存王系列」帶兩個混血寶寶玩台灣人的童年！劍湖山親子兩天一夜，蒳家人誰最有膽？Taiwan Amusement Park Challenge with Kids", "client": "佳娜祖雄“蒳家人” TT FAMILY"},
+      {"id": "8OL0E_wDJkE", "date": "2026-09-03", "title": "三款 LG WashTower 開箱評比 ！體積不同功能也有差【莫娜 Moana】", "client": "莫娜 Moana in the wood"},
+      {"id": "Nxvf0QETbqw", "date": "2026-06-26", "title": "職業棋士的大腦太可怕！黑嘉嘉看1分鐘棋譜就認出自己的比賽？", "client": "嘉嘉老師GO"},
+      {"id": "bxwgi3t623s", "date": "2026-04-04", "title": "如果重來...這些我不會做！設計師入住自己家1.5年的真心話｜小林美家", "client": "小林美家 | 爾聲空間打造你的夢想家"},
+      {"id": "Slr5yVvrzUw", "date": "2026-03-27", "title": "真假黑嘉嘉對決！五人聯手能打敗最高等級「AI黑嘉嘉」嗎？ ft.亞運金牌許皓鋐、職業九段蕭正浩", "client": "嘉嘉老師GO"},
+      {"id": "Xe5PwpBgGPg", "date": "2026-03-06", "title": "黑嘉嘉手忙腳亂笑到不行！連亞運金牌也被難倒的「圍棋術語黑白猜」", "client": "嘉嘉老師GO"},
+      {"id": "_5QKVF8Tz2I", "date": "2026-01-24", "title": "2026 居家提案！客廳一定要有沙發？打破傳統格局！用輝葉 AI 追夢椅打造「ME TIME」角落！｜小林美家", "client": "小林美家 | 爾聲空間打造你的夢想家"},
+      {"id": "Z_QzWwQFdbY", "date": "2025-11-28", "title": "【圍棋實境秀EP8】終局之戰黑嘉嘉當裁判！誰能贏下關鍵對弈奪得冠軍？｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
+      {"id": "CLoWV3o5x0U", "date": "2025-11-14", "title": "【圍棋實境秀EP7】「地獄級難度」盲棋還讓6子！亞運金牌這次會輸給2個圍棋菜鳥嗎？｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
+      {"id": "Ke67iKp8TaM", "date": "2025-11-07", "title": "【圍棋實境秀EP6】讀秒下棋像拆炸彈！心跳飆破150連醫師都驚訝 ft.賴廷榮醫師｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
+      {"id": "5uPsjY-ThYI", "date": "2025-10-31", "title": "【圍棋實境秀EP5】5分鐘就被小朋友「震撼教育」😮 偶像們移地訓練大崩潰｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
+      {"id": "j15H6JKFuxI", "date": "2025-10-24", "title": "【圍棋實境秀EP4】隱藏攝影機偷偷測專注力！3干擾+1魔王她們能挑戰成功？｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
+      {"id": "aVTcDL4HoQE", "date": "2025-10-17", "title": "【圍棋實境秀EP3】1分之差生死戰！她想逆轉就要全答對｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
+      {"id": "WnIGgVe9xew", "date": "2025-10-10", "title": "【圍棋實境秀EP2】第一堂課就爆衝突？「秘密任務」後師生還能聯手搶分嗎？｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
+      {"id": "Q4twdIxRMYc", "date": "2025-10-03", "title": "【圍棋實境秀EP1】女偶像勇闖弈世界！職業九段 vs 20 年名師..誰能讓學生3個月從0到贏？｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
+      {"id": "SFvLtN1Lb5U", "date": "2025-07-19", "title": "只有29坪卻不壓迫！從三房變兩房 → 住進寬敞法式中古奶油宅｜#小林開箱 #法式中古奶油風 #新婚宅開箱  #爾聲空間 #室內設計 #室內裝潢 #儀式感", "client": "小林美家 | 爾聲空間打造你的夢想家"},
+      {"id": "23Wzoz2ea1g", "date": "2025-05-29", "title": "一對一？先不要！異性戀女生的痛苦吶喊！我們為什麼想要逃離一對一關係【開放式露營EP5】寧呀寧呀", "client": "寧呀寧呀"},
+      {"id": "MtgTfpKHm-g", "date": "2025-01-22", "title": "水離子高速吹風機-小口琴_詹子晴", "client": "", "cat": "sponsored"},
+      {"id": "jD9kIYVjPt8", "date": "2025-01-22", "title": "CeraVe適樂膚_詹子晴", "client": "", "cat": "sponsored"},
+      {"id": "8uB86H-i_ZQ", "date": "2024-07-24", "title": "潮流媒體界💫首次熱血籃球賽 3 對 3！街星男籃夢幻隊拚了❤️‍🔥開賽前就掛彩🫨？到底能不能贏啊!!!", "client": "JUKSY 街星"},
+      {"id": "u9zo67Qb_h8", "date": "2024-06-15", "title": "高CP值電腦周邊新品搶先看 ! darkFlash 今年推出的機殼、水冷、磁吸風扇、機械鍵盤【貝爾熊派】Computex 2024", "client": "貝爾熊派"},
+      {"id": "DIFZnVpasRM", "date": "2024-05-18", "title": "最熱門的醫美項目前三名 你加一嗎？［小晴人BabyChing ］#醫美  #醫美推薦  #醫美診所", "client": "小晴人BabyChing"},
+      {"id": "tuvZiq-ROTs", "date": "2024-05-16", "title": "平價又好看！六款顏色都超美的 HUAWEI WATCH FIT 3 竟然可以接 LINE 電話？iOS、Android 都支援 iPhone 也可用【莫娜 Moana】", "client": "莫娜 Moana in the wood"},
+      {"id": "VfEjNQDO1x8", "date": "2024-01-10", "title": "Check2Check x P.STAR 淨顏溫感水秒機", "client": "", "cat": "sponsored"},
+      {"id": "aVmXSoxfo84", "date": "2023-12-14", "title": "首創結合「移動電源」的電輔車〔 Bikniks 超電力野餐行旅車 〕", "client": "小晴人BabyChing"},
+      {"id": "bQG-fm9lC4M", "date": "2023-09-16", "title": "八三夭 [ 給想要綻放的人 ] MV 拍攝 幕後花絮：小橘分享高中綻放戀愛觀 / 差點把mv拍成業配 / 綻放詞曲mv創作大解析 / 廢棄倉庫拍出最綻放mv", "client": "八三夭 831"},
+      {"id": "0HbNrKfoNvY", "date": "2023-09-08", "title": "FIAT BARCHETTA 老車開箱🔥 你一定要懂的經典老車！帶你穿梭飛雅特的傳奇品牌之旅！像船一樣的雙門敞篷跑車？【 Monster Garage Classic】#fiat", "client": "Hyper Monster 猛獸俱樂部"},
+      {"id": "k9MHY0veQEw", "date": "2023-07-17", "title": "彌補家人白費青春 比別人更早被現實打臉我還是堅持嘻哈夢 ｜挺夢特攻隊EP1", "client": "Dcard報報"},
+      {"id": "PQywJYIZFBU", "date": "2023-06-28", "title": "夏天的北海岸怎麼玩？讓Rio和Leo帶你去😍🫶｜Dcard報報", "client": "Dcard報報"},
+      {"id": "qPtoWon-Bkc", "date": "2023-05-10", "title": "女裝只有0次跟無限次！聖子＆Zona 假面閨蜜約會再開結果會是...?｜Dcard報報特別企劃", "client": "Dcard報報"},
+      {"id": "mHGCGc1Wijo", "date": "2023-01-29", "title": "Alfa romeo159 全車大改造 最帥愛快女車主【Hyper Monster Garage】", "client": "Hyper Monster 猛獸俱樂部"},
+      {"id": "uMX6lHI6Tbk", "date": "2022-12-11", "title": "「喝酒遊戲大爆料！」我到底睡過幾個人？ Feat. @tylertaile", "client": "佳娜祖雄“蒳家人” TT FAMILY"},
+      {"id": "bIUkws0E_ss", "date": "2022-10-21", "title": "顏質最高的電視【Samsung QLED 4K】讓自己生活更美好", "client": "小晴人BabyChing"},
+      {"id": "BHUVNlmVt44", "date": "2022-10-01", "title": "【Costco都買什麼？闆娘精選高CP值好物推薦！兩人世界省錢小妙招】 #詹子晴丫頭 #威廉 #costco", "client": "小晴人BabyChing"},
+      {"id": "CLqnnZaq84A", "date": "2022-07-11", "title": "登高計畫_2022陽明山會師大縱走We reach high from the ground", "client": "陽明交大_陽明課外組"},
+      {"id": "KPDBbYE69h8", "date": "2022-06-25", "title": "｜外國女生交往前需要先試車｜外國女生如何找自己適合台灣的對象？｜長得矮再帥都不行？｜脫單企劃 EP.2", "client": "佳娜祖雄“蒳家人” TT FAMILY"},
+      {"id": "llGozb02icA", "date": "2022-05-24", "title": "大聲說愛 · 大破距離～Samsung Galaxy Tab S8 Ultra", "client": "小晴人BabyChing"},
+      {"id": "sVh3cxpeLMg", "date": "2021-09-02", "title": "賓士G-CLASS，G500開箱！G CAR真的是你心目中的DREAM CAR嗎？｜VIC CHEN", "client": "Vic 陳雋希"},
+      {"id": "4W8BlgHxoHQ", "date": "2021-08-26", "title": "施語庭《GREEN》MV 幕後花絮 Behind the scenes", "client": "硬搞娛樂 INGO Entertainment"},
+      {"id": "9Tt6s7NcrDQ", "date": "2021-07-29", "title": "男生長髮6種綁法！Man Bun、丸子頭、馬尾、公主頭小技巧一次告訴你｜VIC CHEN", "client": "Vic 陳雋希"},
+      {"id": "TRE61BG6-18", "date": "2021-07-22", "title": "開箱家裡裝潢，現代輕工業風！細節、室內設計、注意事項一次分享給你｜VIC CHEN", "client": "Vic 陳雋希"},
+      {"id": "doZ44eqiifM", "date": "2021-06-17", "title": "男生留長髮要注意哪些點？過渡期怎麼撐過！？男生長髮優缺點一次告訴你｜VIC CHEN", "client": "Vic 陳雋希"},
+      {"id": "T4FqLJwD22g", "date": "2021-04-16", "title": "夏日花襯衫穿搭！8種花襯衫穿搭！簡單又不單調！｜VIC CHEN", "client": "Vic 陳雋希"}
     ],
     short: [ /* Shorts 填影片 ID，例如 youtube.com/shorts/XXXX → { id: "XXXX", title: "作品名稱" } */ ],
     event: [
-      {"id": "tBcHb1ipQcE", "title": "《candy》 簽唱會邱勝翊&邱宇辰", "client": ""},
-      {"id": "X9dDEl4xtUE", "title": "金鐘獎Vlog_夏和熙", "client": ""},
-      {"id": "B779FV-KPnk", "title": "宇宙星辰music party_邱宇辰", "client": ""}
+      {"id": "tBcHb1ipQcE", "date": "2025-04-30", "title": "《candy》 簽唱會邱勝翊&邱宇辰", "client": ""},
+      {"id": "X9dDEl4xtUE", "date": "2025-01-22", "title": "金鐘獎Vlog_夏和熙", "client": ""},
+      {"id": "B779FV-KPnk", "date": "2025-01-22", "title": "宇宙星辰music party_邱宇辰", "client": ""}
     ]
   },
+  // 合作頻道（大頭貼取自 YouTube；訂閱數為 2026 年 11 月資料，可自行更新）
+  channels: [
+    { name: "那個女生 Kiki", url: "https://www.youtube.com/@minikiki_0529", img: "https://yt3.googleusercontent.com/ytc/AIdro_lLiljWW8UdRgRH5sDlIRwmvTv7euwSYb_V3ltogsOPsXj0=s240-c-k-c0x00ffffff-no-rj", subs: "117 萬" },
+    { name: "DeerDeer米鹿", url: "https://www.youtube.com/@deerdeermilu", img: "https://yt3.googleusercontent.com/4gSwLNyywwb6dwy1yLzX6djriqczdCydX3nAUDGDhiKMndrO_JJveN_MBGaBY-xfBkxPUvCRPQ=s240-c-k-c0x00ffffff-no-rj", subs: "23.1 萬" },
+    { name: "佳娜祖雄 蒳家人", url: "https://www.youtube.com/@_tatiana_lin", img: "https://yt3.googleusercontent.com/6wQ4zAk-CRNYuyCwDcJ7_h2XzH7v_KEBSIgs-gK-NxRfJKore2TEMkhZ6WYquoPTJgiZZC_bmJc=s240-c-k-c0x00ffffff-no-rj", subs: "20.8 萬" },
+    { name: "Linda 零打", url: "https://www.youtube.com/@lindawuss", img: "https://yt3.googleusercontent.com/dUcS45yRFxo0WiGWDkRV6RqAWUPCBIIYhG6DmQ78xu3AaOnagRZ2b19sJhu2-bTrDKC73-aR=s240-c-k-c0x00ffffff-no-rj", subs: "7.46 萬" },
+    { name: "小林美家", url: "https://www.youtube.com/@linlin_miga", img: "https://yt3.googleusercontent.com/lQ4hM4boPhRDI8z97ked0DmNkR2O-jRFyFPnO-TtpozjxbzALIdu6_ml1qBkq5-7GUJdz2CdJQ=s240-c-k-c0x00ffffff-no-rj", subs: "6,090" }
+  ],
   contact: {
-    email: "",    // 例如 "hello@move-studio.tw"
-    line:  "",    // LINE ID
-    phone: ""
+    email: ""     // ← 填入你們的信箱，例如 "hello@move-studio.tw"
   }
 };
 </script>
@@ -166,7 +175,7 @@ ul,ol{list-style:none}
 /* ---------- Approach ---------- */
 .lede{font-size:clamp(24px,2.8vw,34px);font-weight:500;line-height:1.55;letter-spacing:-.01em;max-width:28ch}
 .lede .soft{color:var(--fg-mute)}
-.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-lg);border-top:1px solid var(--line);padding-top:var(--s-lg);margin-top:var(--s-lg)}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-lg);border-top:1px solid var(--line);padding-top:var(--s-lg);margin-top:var(--s-lg)}
 .pillar h3{font-size:22px;font-weight:600;letter-spacing:-.01em;margin:var(--s-sm) 0 var(--s-xs)}
 .pillar p{color:var(--fg-soft);font-size:14px}
 
@@ -204,6 +213,12 @@ ul,ol{list-style:none}
 .work .n{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--fg-mute);margin-top:4px}
 .more{margin-top:var(--s-md);font-size:14px;color:var(--fg-soft);display:inline-flex;gap:8px;align-items:center;min-height:44px;border-bottom:1px solid var(--line);transition:color .2s,border-color .2s}
 .more:hover{color:var(--fg);border-color:var(--fg)}
+.channels{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--s-md);border-top:1px solid var(--line);padding-top:var(--s-lg)}
+.channels a{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;transition:transform .45s var(--spring)}
+.channels a:hover{transform:translateY(-4px)}
+.channels img{width:112px;height:112px;border-radius:50%;object-fit:cover;background:var(--bg-soft);box-shadow:0 0 0 .5px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.08)}
+.channels .nm{font-size:15px;font-weight:600;line-height:1.4}
+.channels .sb{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--fg-mute);margin-top:-8px;text-transform:uppercase}
 .empty-state{border-radius:var(--r-lg);background:var(--bg-soft);padding:72px var(--s-md);text-align:center}
 .empty-state h3{font-size:20px;font-weight:600;margin:var(--s-sm) 0 var(--s-xs)}
 .empty-state p{color:var(--fg-soft);font-size:14px;margin-bottom:var(--s-sm)}
@@ -226,23 +241,15 @@ ul,ol{list-style:none}
 .flow td.step{font-weight:600;width:200px}
 .flow td.desc{color:var(--fg-soft)}
 
-/* ---------- Contact (iOS grouped form) ---------- */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-lg)}
+/* ---------- Contact ---------- */
 .contact-title{font-size:clamp(40px,6vw,72px);font-weight:700;line-height:1.08;letter-spacing:-.03em}
-.info{margin-top:var(--s-lg);display:grid;grid-template-columns:120px 1fr;row-gap:var(--s-sm);column-gap:var(--s-md);font-size:15px}
-.info dt{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-mute);padding-top:4px}
-.form-group{background:var(--bg-soft);border-radius:var(--r-md);overflow:hidden;margin-bottom:var(--s-md)}
-.form-group .field{display:grid;grid-template-columns:110px 1fr;align-items:center;padding:0 var(--s-sm);min-height:52px;position:relative}
-.form-group .field + .field::before{content:"";position:absolute;left:var(--s-sm);right:0;top:0;height:.5px;background:rgba(0,0,0,.14)}
-.form-group .field.stack{grid-template-columns:1fr;padding-top:14px;padding-bottom:6px}
-.form-group label{font-size:15px;color:var(--fg)}
-.form-group input,.form-group select,.form-group textarea{font:inherit;font-size:16px;color:var(--fg);background:transparent;border:0;outline:none;padding:14px 0;width:100%;appearance:none;-webkit-appearance:none;border-radius:0}
-.form-group input::placeholder,.form-group textarea::placeholder{color:#b0b0b5}
-.form-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='13' fill='none' stroke='%23b0b0b5' stroke-width='2'%3E%3Cpath d='M1 1l5.5 5.5L1 12'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center;padding-right:20px;color:var(--fg-soft)}
-.form-group textarea{min-height:120px;resize:vertical;padding-top:6px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:52px;border-radius:var(--r-md);background:var(--accent);color:var(--accent-fg);font-size:17px;font-weight:600;transition:transform .3s var(--spring),opacity .2s}
-.btn:active{transform:scale(.98);opacity:.85}
-.form-note{font-size:13px;color:var(--fg-mute);margin-top:var(--s-sm);text-align:center}
+.mail .caption{display:block}
+.mail{margin-top:var(--s-lg);padding-top:var(--s-md);border-top:1px solid var(--line)}
+.mail-addr{display:inline-block;margin-top:10px;font-size:clamp(24px,3.4vw,40px);font-weight:600;letter-spacing:-.01em;word-break:break-all;border-bottom:1px solid var(--fg);line-height:1.3}
+.mail-actions{display:flex;gap:12px;margin-top:var(--s-md);flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 28px;border-radius:var(--r-md);background:var(--accent);color:var(--accent-fg);font-size:16px;font-weight:600;transition:transform .3s var(--spring),opacity .2s}
+.btn:active{transform:scale(.97);opacity:.85}
+.btn.ghost{background:var(--bg-soft);color:var(--fg)}
 
 /* ---------- Footer ---------- */
 footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
@@ -267,13 +274,15 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
   .burger{display:flex}
   .hero{padding:140px 0 96px}
   .hero-issue{margin-bottom:48px}
-  .hero-meta,.section-header,.about-grid,.contact-grid{grid-template-columns:1fr;gap:var(--s-sm) var(--s-md)}
+  .channels{grid-template-columns:repeat(3,1fr);row-gap:var(--s-md)}
+  .channels img{width:88px;height:88px}
+  .pillars{grid-template-columns:1fr 1fr}
+  .hero-meta,.section-header,.about-grid{grid-template-columns:1fr;gap:var(--s-sm) var(--s-md)}
   .hero-meta dd{margin-bottom:8px}
   .section{padding:88px 0}
   .section-header{margin-bottom:var(--s-md)}
   .row{grid-template-columns:40px 1fr;gap:8px var(--s-sm)}
   .row p{grid-column:2}
-  .pillars{grid-template-columns:1fr;gap:var(--s-md)}
   .grid{grid-template-columns:1fr 1fr;gap:28px 14px}
   .seg{display:grid;width:100%}
   .seg button{padding:8px 10px}
@@ -282,6 +291,8 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
 }
 @media (max-width:520px){
   .grid{grid-template-columns:1fr}
+  .channels{grid-template-columns:1fr 1fr}
+  .pillars{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -329,7 +340,7 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
       </div>
     </div>
     <div class="rows">
-      <div class="row rv"><span class="idx">01</span><div class="name">YouTube 長片<span class="en">Long-form YouTube</span></div><p>企劃、拍攝到剪輯全包。掌握敘事節奏與段落邏輯，讓觀眾一路看到最後，也讓頻道風格穩定一致。</p></div>
+      <div class="row rv"><span class="idx">01</span><div class="name">YouTube 長片<span class="en">Long-form YouTube</span></div><p>除了 YouTube 長片剪輯之外，也包含企劃、拍攝到剪輯全包。掌握敘事節奏與段落邏輯，讓觀眾一路看到最後，也讓頻道風格穩定一致。</p></div>
       <div class="row rv"><span class="idx">02</span><div class="name">短影音<span class="en">Reels · Shorts · TikTok</span></div><p>前三秒抓住注意力。直式構圖、字幕節奏與 hook 設計，專為各平台演算法與滑動習慣打造。</p></div>
       <div class="row rv"><span class="idx">03</span><div class="name">業配拍攝<span class="en">Branded Content</span></div><p>把品牌訊息自然寫進創作者的語言。不硬塞、不尷尬，讓觀眾記住產品，也不失去對頻道的信任。</p></div>
       <div class="row rv"><span class="idx">04</span><div class="name">剪輯後製<span class="en">Post-production</span></div><p>可單獨承接剪輯。調光調色、字幕包裝、音效配樂，把素材整理成好看又好懂的作品。</p></div>
@@ -343,13 +354,28 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
   <div class="container">
     <div class="section-header rv">
       <span class="caption index">02 — Approach</span>
-      <p class="lede">我們不是動輒出動整組劇組的大型廣告公司。<span class="soft">我們是一支精準的小型影像團隊——</span>先把需求聽懂，再寫出真正適合你的腳本。</p>
+      <p class="lede">我們雖然不是大型廣告公司，<span class="soft">但我們是一支精準的小型影像團隊——</span>先了解您的需求，再寫出真正適合你的腳本。</p>
     </div>
     <div class="pillars">
       <div class="pillar rv"><span class="caption">01 / Listen</span><h3>精準需求</h3><p>從目標受眾、平台到預期成效，先釐清真正要解決的問題，而不是只拍一支「好看」的影片。</p></div>
       <div class="pillar rv"><span class="caption">02 / Script</span><h3>合適腳本</h3><p>依照品牌調性與頻道語氣量身寫腳本，讓每一個鏡頭都有存在的理由。</p></div>
       <div class="pillar rv"><span class="caption">03 / Flexible</span><h3>彈性成本</h3><p>小團隊、高機動。把預算花在畫面上，而不是花在用不到的人力與器材。</p></div>
+      <div class="pillar rv"><span class="caption">04 / Creator</span><h3>創作者視角</h3><p>我們本身也是創作者，經營自己的頻道與社群，親身面對演算法、數據與觀眾回饋。更懂創作者想守住的風格，也知道品牌需要的成效。</p></div>
     </div>
+  </div>
+</section>
+
+<!-- ============ CHANNELS ============ -->
+<section class="section" id="channels">
+  <div class="container">
+    <div class="section-header rv">
+      <span class="caption index">03 — Channels</span>
+      <div>
+        <h2 class="h1">合作頻道</h2>
+        <p>長期與創作者並肩，從企劃、拍攝到剪輯，一起把頻道經營得更好。</p>
+      </div>
+    </div>
+    <ul class="channels rv" id="channel-list"></ul>
   </div>
 </section>
 
@@ -357,7 +383,7 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
 <section class="section" id="works">
   <div class="container">
     <div class="section-header rv">
-      <span class="caption index">03 — Works</span>
+      <span class="caption index">04 — Works</span>
       <div>
         <h2 class="h1">作品集</h2>
         <p>點縮圖即可在頁面上直接播放。</p>
@@ -391,7 +417,7 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
 <section class="section" id="about" style="background:var(--bg-soft)">
   <div class="container">
     <div class="section-header rv">
-      <span class="caption index">04 — About</span>
+      <span class="caption index">05 — About</span>
       <h2 class="h1">關於我們</h2>
     </div>
     <div class="about-grid">
@@ -418,7 +444,7 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
 <section class="section" id="workflow">
   <div class="container">
     <div class="section-header rv">
-      <span class="caption index">05 — Workflow</span>
+      <span class="caption index">06 — Workflow</span>
       <div>
         <h2 class="h1">合作流程</h2>
         <p>清楚的流程，讓每一次合作都在預期之內。</p>
@@ -440,34 +466,22 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
 
 <!-- ============ CONTACT ============ -->
 <section class="section" id="contact" style="border-top:1px solid var(--line)">
-  <div class="container contact-grid">
-    <div class="rv">
-      <span class="caption index mute">06 — Contact</span>
-      <h2 class="contact-title" style="margin-top:24px">Let’s make<br>something move.</h2>
-      <p style="color:var(--fg-soft);margin-top:var(--s-md);max-width:40ch">告訴我們你的想法，我們會在 2 個工作天內回覆，並提供初步的企劃方向與報價。</p>
-      <dl class="info" id="info"></dl>
+  <div class="container">
+    <div class="section-header rv">
+      <span class="caption index">07 — Contact</span>
+      <div>
+        <h2 class="contact-title">Let’s make<br>something move.</h2>
+        <p style="margin-top:var(--s-md)">告訴我們你的想法，我們會在 2 個工作天內回覆，並提供初步的企劃方向與報價。</p>
+        <div class="mail rv">
+          <span class="caption mute">Email</span>
+          <a class="mail-addr" id="mail-addr" href="#">［你的 Email］</a>
+          <div class="mail-actions">
+            <a class="btn" id="mail-btn" href="#">寫信給我們</a>
+            <button class="btn ghost" id="copy-btn" type="button">複製信箱</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <form class="rv" id="form" novalidate>
-      <div class="form-group">
-        <div class="field"><label for="f-name">姓名</label><input id="f-name" name="name" required autocomplete="name" placeholder="必填"></div>
-        <div class="field"><label for="f-co">公司／頻道</label><input id="f-co" name="company" autocomplete="organization" placeholder="選填"></div>
-        <div class="field"><label for="f-mail">Email</label><input id="f-mail" name="email" type="email" required autocomplete="email" placeholder="必填"></div>
-        <div class="field"><label for="f-tel">電話</label><input id="f-tel" name="phone" type="tel" autocomplete="tel" placeholder="選填"></div>
-      </div>
-      <div class="form-group">
-        <div class="field"><label for="f-type">合作類型</label>
-          <select id="f-type" name="type"><option>YouTube 長片</option><option>短影音</option><option>業配拍攝</option><option>單純剪輯</option><option>活動紀錄</option><option>其他</option></select>
-        </div>
-        <div class="field"><label for="f-budget">預算範圍</label>
-          <select id="f-budget" name="budget"><option>尚未確定</option><option>NT$30,000 以下</option><option>NT$30,000 – 80,000</option><option>NT$80,000 – 150,000</option><option>NT$150,000 以上</option></select>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="field stack"><label for="f-msg">需求說明</label><textarea id="f-msg" name="message" required placeholder="例如：想做一系列產品開箱短影音，預計 3 支，希望 12 月上線"></textarea></div>
-      </div>
-      <button class="btn" type="submit">送出需求</button>
-      <p class="form-note" id="form-note">送出後會開啟你的郵件程式，帶入以上內容。</p>
-    </form>
   </div>
 </section>
 
@@ -526,7 +540,8 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
     </div>`;
 
   /* YouTube 長片：頻道合作（依創作者分組）／實境秀／業配拍攝 */
-  const all = CONFIG.works.long || [];
+  const byDate = (a, b) => (b.date || '').localeCompare(a.date || '');
+  const all = (CONFIG.works.long || []).slice().sort(byDate);
   const subs = { channel: all.filter(w => !w.cat), reality: all.filter(w => w.cat === 'reality'), sponsored: all.filter(w => w.cat === 'sponsored') };
   const subTitles = { reality: '圍棋實境秀｜弈世界玩家 · 嘉嘉老師GO', sponsored: '業配拍攝' };
   const longBox = document.getElementById('w-long');
@@ -553,7 +568,7 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
 
   /* 短影音、活動紀錄 */
   [['short', '短影音'], ['event', '活動紀錄']].forEach(([key, title]) => {
-    const list = CONFIG.works[key] || [];
+    const list = (CONFIG.works[key] || []).slice().sort(byDate);
     document.getElementById('c-' + key).textContent = list.length ? pad(list.length) : '';
     document.getElementById('w-' + key).innerHTML = list.length ? group(title, list, 9) : empty(title, key);
   });
@@ -600,27 +615,26 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
   window.addEventListener('resize', moveInd);
   if (document.fonts) document.fonts.ready.then(moveInd);
 
-  /* 聯絡資訊 */
-  const c = CONFIG.contact;
-  const rows = [
-    ['Email', c.email ? `<a href="mailto:${c.email}">${c.email}</a>` : '［你的 Email］'],
-    ['LINE', c.line || '［LINE ID］'],
-    ['Phone', c.phone || '［聯絡電話］'],
-    ['Based in', '新北市・台北市']
-  ];
-  document.getElementById('info').innerHTML = rows.map(r => `<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join('');
+  /* 合作頻道 */
+  document.getElementById('channel-list').innerHTML = CONFIG.channels.map(ch => `
+    <li><a href="${ch.url}" target="_blank" rel="noopener">
+      <img src="${ch.img}" alt="${esc(ch.name)} 頻道大頭貼" loading="lazy" referrerpolicy="no-referrer">
+      <span class="nm">${esc(ch.name)}</span>
+      ${ch.subs ? `<span class="sb">${esc(ch.subs)} 訂閱</span>` : ''}
+    </a></li>`).join('');
 
-  /* 表單 → mailto */
-  document.getElementById('form').addEventListener('submit', e => {
-    e.preventDefault();
-    const f = e.target, note = document.getElementById('form-note');
-    if (!f.name.value.trim() || !f.email.value.trim() || !f.message.value.trim()){
-      note.textContent = '請填寫姓名、Email 與需求說明。'; note.style.color = 'var(--accent)'; return;
-    }
-    if (!c.email){ note.textContent = '尚未設定收件 Email（請在 CONFIG.contact.email 填入）。'; note.style.color = 'var(--accent)'; return; }
-    const body = `姓名：${f.name.value}\n公司／頻道：${f.company.value}\nEmail：${f.email.value}\n電話：${f.phone.value}\n合作類型：${f.type.value}\n預算：${f.budget.value}\n\n需求說明：\n${f.message.value}`;
-    location.href = `mailto:${c.email}?subject=${encodeURIComponent('【合作洽詢】' + f.type.value + '｜' + f.name.value)}&body=${encodeURIComponent(body)}`;
-    note.textContent = '已開啟郵件程式，確認內容後按下寄出即可。'; note.style.color = '';
+  /* 聯絡信箱 */
+  const email = CONFIG.contact.email;
+  const addr = document.getElementById('mail-addr'), mailBtn = document.getElementById('mail-btn'), copyBtn = document.getElementById('copy-btn');
+  if (email){
+    addr.textContent = email;
+    addr.href = mailBtn.href = 'mailto:' + email + '?subject=' + encodeURIComponent('【合作洽詢】');
+  }
+  copyBtn.addEventListener('click', async () => {
+    if (!email) return;
+    try { await navigator.clipboard.writeText(email); copyBtn.textContent = '已複製 ✓'; }
+    catch (e) { copyBtn.textContent = email; }
+    setTimeout(() => copyBtn.textContent = '複製信箱', 2000);
   });
 
   /* Reveal */
