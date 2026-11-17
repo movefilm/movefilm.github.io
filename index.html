@@ -32,7 +32,10 @@ const CONFIG = {
 
   // 精選作品（之後慢慢補）：每支填 { id: "影片ID", title: "作品名稱", client: "客戶／頻道" }
   works: {
-    long:  [ /* { id: "AbCdEf12345", title: "作品名稱", client: "客戶名稱" }, */ ],
+    long:  [
+      { id: "bxwgi3t623s", title: "", client: "" },
+      /* { id: "AbCdEf12345", title: "作品名稱", client: "客戶名稱" }, */
+    ],
     short: [ /* Shorts 也是填影片 ID，例如 youtube.com/shorts/XXXX → "XXXX" */ ],
     event: [ ]
   },
@@ -153,10 +156,10 @@ section{position:relative}
 .panel{display:none}
 .panel.active{display:block;animation:fade .6s var(--ease)}
 @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.pl{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:end;margin-bottom:72px}
-.pl.vert{grid-template-columns:minmax(0,380px) 1fr;align-items:center}
-.pl-info h3{font-family:var(--serif);font-weight:500;font-size:28px;margin:10px 0 12px}
-.pl-info p{color:var(--muted);margin:0 0 24px;font-size:15px}
+.pl{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 48px;flex-wrap:wrap;margin-bottom:40px}
+.pl-info h3{font-family:var(--serif);font-weight:500;font-size:24px;margin:0 0 6px}
+.pl-info p{color:var(--muted);margin:0;font-size:15px}
+.work .frame{background:var(--soft)}
 .link-btn{display:inline-flex;align-items:center;gap:10px;font-size:14px;border-bottom:1px solid var(--ink);padding-bottom:4px;min-height:44px}
 .grid-label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px}
 .grid-label h4{font-family:var(--serif);font-weight:500;font-size:20px;margin:0}
@@ -245,8 +248,7 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line)}
   .nav.open{background:#fff;border-bottom-color:var(--line)}
   .burger{display:flex}
   .hero{padding-top:128px}
-  .hero-top,.pl,.pl.vert,.contact-top{grid-template-columns:1fr;gap:32px}
-  .pl.vert .frame.v{max-width:360px}
+  .hero-top,.contact-top{grid-template-columns:1fr;gap:32px}
   .svc-row{grid-template-columns:1fr;gap:10px;padding:32px 0}
   .svc-row .no{padding-top:0}
   .pillars{grid-template-columns:1fr}
@@ -409,45 +411,36 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line)}
     <!-- 長片 -->
     <div class="panel active" role="tabpanel" id="p-long" aria-labelledby="t-long">
       <div class="pl">
-        <div class="frame" data-playlist="long"></div>
         <div class="pl-info">
-          <div class="eyebrow">Playlist</div>
-          <h3>YouTube 長片作品集</h3>
+          <h3>YouTube 長片</h3>
           <p>頻道長片、訪談節目與 Vlog，從企劃、拍攝到剪輯的完整作品。</p>
-          <a class="link-btn" data-pl-link="long" href="#" target="_blank" rel="noopener">在 YouTube 觀看完整清單 <span aria-hidden="true">→</span></a>
         </div>
+        <a class="link-btn" data-pl-link="long" href="#" target="_blank" rel="noopener">觀看完整播放清單 <span aria-hidden="true">→</span></a>
       </div>
-      <div class="grid-label"><h4>精選作品</h4><span class="eyebrow">Selected</span></div>
       <div class="works" id="w-long"></div>
     </div>
 
     <!-- 短影音 -->
     <div class="panel" role="tabpanel" id="p-short" aria-labelledby="t-short">
-      <div class="pl vert">
-        <div class="frame v" data-playlist="short"></div>
+      <div class="pl">
         <div class="pl-info">
-          <div class="eyebrow">Playlist</div>
-          <h3>短影音作品集</h3>
+          <h3>短影音</h3>
           <p>Reels、Shorts 與 TikTok 直式短影音，包含品牌業配與創作者合作。</p>
-          <a class="link-btn" data-pl-link="short" href="#" target="_blank" rel="noopener">在 YouTube 觀看完整清單 <span aria-hidden="true">→</span></a>
         </div>
+        <a class="link-btn" data-pl-link="short" href="#" target="_blank" rel="noopener">觀看完整播放清單 <span aria-hidden="true">→</span></a>
       </div>
-      <div class="grid-label"><h4>精選作品</h4><span class="eyebrow">Selected</span></div>
       <div class="works vert" id="w-short"></div>
     </div>
 
     <!-- 活動紀錄 -->
     <div class="panel" role="tabpanel" id="p-event" aria-labelledby="t-event">
       <div class="pl">
-        <div class="frame" data-playlist="event"></div>
         <div class="pl-info">
-          <div class="eyebrow">Playlist</div>
           <h3>活動紀錄</h3>
           <p>品牌活動、記者會與現場紀錄的精華影片。</p>
-          <a class="link-btn" data-pl-link="event" href="#" target="_blank" rel="noopener">在 YouTube 觀看完整清單 <span aria-hidden="true">→</span></a>
         </div>
+        <a class="link-btn" data-pl-link="event" href="#" target="_blank" rel="noopener">觀看完整播放清單 <span aria-hidden="true">→</span></a>
       </div>
-      <div class="grid-label"><h4>精選作品</h4><span class="eyebrow">Selected</span></div>
       <div class="works" id="w-event"></div>
     </div>
   </div>
@@ -576,42 +569,28 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line)}
   reel.innerHTML = `<iframe src="${reelSrc}" title="霂影像 Showreel" loading="lazy" ${ytAttrs}></iframe>`;
 
   /* Playlists */
-  document.querySelectorAll('[data-playlist]').forEach(el => {
-    const id = CONFIG.playlists[el.dataset.playlist];
-    el.innerHTML = `<iframe src="${YT}videoseries?list=${id}&rel=0" title="YouTube 播放清單" loading="lazy" ${ytAttrs}></iframe>`;
-  });
   document.querySelectorAll('[data-pl-link]').forEach(a => {
     a.href = "https://www.youtube.com/playlist?list=" + CONFIG.playlists[a.dataset.plLink];
   });
 
-  /* Works grids */
-  const playIcon = '<svg width="16" height="18" viewBox="0 0 16 18" aria-hidden="true"><path d="M0 0l16 9-16 9z" fill="#111"/></svg>';
-  function renderWorks(key, placeholders){
+  /* Works grids：直接嵌入影片，不足一排時補上空位 */
+  function renderWorks(key, perRow){
     const box = document.getElementById('w-' + key);
     const list = CONFIG.works[key] || [];
     document.getElementById('c-' + key).textContent = list.length ? String(list.length).padStart(2,'0') : '';
-    if (!list.length){
-      box.innerHTML = Array.from({length:placeholders}, (_,i) =>
-        `<div class="work empty"><div class="thumb"><em>COMING SOON</em></div>
-         <div class="cap"><b>作品 ${String(i+1).padStart(2,'0')}</b><span>即將上線</span></div></div>`).join('');
-      return;
-    }
-    box.innerHTML = list.map(w => `
+    const vert = key === 'short';
+    const cards = list.map(w => `
       <div class="work">
-        <button class="thumb" data-yt="${w.id}" aria-label="播放：${w.title || 'YouTube 影片'}">
-          <img src="https://i.ytimg.com/vi/${w.id}/hqdefault.jpg" alt="" loading="lazy">
-          <span class="play">${playIcon}</span>
-        </button>
-        <div class="cap"><b>${w.title || ''}</b><span>${w.client || ''}</span></div>
-      </div>`).join('');
+        <div class="frame${vert ? ' v' : ''}"><iframe src="${YT}${w.id}?rel=0" title="${w.title || 'YouTube 影片'}" loading="lazy" ${ytAttrs}></iframe></div>
+        ${(w.title || w.client) ? `<div class="cap"><b>${w.title || ''}</b><span>${w.client || ''}</span></div>` : ''}
+      </div>`);
+    const total = Math.max(perRow, Math.ceil(list.length / perRow) * perRow);
+    for (let i = list.length; i < total; i++){
+      cards.push(`<div class="work empty"><div class="thumb"><em>COMING SOON</em></div></div>`);
+    }
+    box.innerHTML = cards.join('');
   }
-  renderWorks('long', 6); renderWorks('short', 4); renderWorks('event', 3);
-  document.addEventListener('click', e => {
-    const t = e.target.closest('.thumb[data-yt]');
-    if (!t) return;
-    t.innerHTML = `<iframe src="${YT}${t.dataset.yt}?autoplay=1&rel=0" title="YouTube 影片" ${ytAttrs}></iframe>`;
-    t.removeAttribute('data-yt');
-  });
+  renderWorks('long', 3); renderWorks('short', 4); renderWorks('event', 3);
 
   /* Tabs */
   const tabs = document.querySelectorAll('.tab');
