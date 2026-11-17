@@ -3,32 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
 <title>霂影像 MOVE Studio｜YouTube 長片・短影音・品牌業配拍攝</title>
 <meta name="description" content="霂影像有限公司：YouTube 長片拍攝剪輯、短影音、品牌業配拍攝。小而精準的影像團隊，先聽懂需求，再寫出剛好適合你的腳本。">
 <meta property="og:title" content="霂影像 MOVE Studio">
 <meta property="og:description" content="YouTube 長片・短影音・品牌業配拍攝。用剛好的成本，說對的故事。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <!-- 源樣黑體 GenYo Gothic（OFL 授權，依頁面用到的字自動載入） -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hanzi.pro/webfonts-genyo-gothic@0.1.0/swap.css">
 
 <script>
 /* ============================================================
-   ✏️  網站設定：之後補作品、IG 貼文，只要改這裡就好
+   ✏️  網站設定：之後補作品，只要改這裡就好
+   作品清單的順序 = 網站上的順序（最新的放最上面）
+   cat 可填 "reality"（實境秀）或 "sponsored"（業配拍攝）；不填就歸在「頻道合作」，依 client 分組
    ============================================================ */
 const CONFIG = {
-  // 三個 YouTube 播放清單（已幫你放好）
   playlists: {
     long:  "PL9GynfDuKgKEW5Cv2VxNSR-kYl_6Idnps", // Move影像_作品集
     short: "PL9GynfDuKgKHpYu0XWvnu0m3t-rJQDIN-", // 霂_短影音作品集
     event: "PL9GynfDuKgKHSZFjBSnfAhj-oyUez93Ij"  // 活動紀錄｜作品輯
   },
-
-  // 精選作品（之後慢慢補）：每支填 { id: "影片ID", title: "作品名稱", client: "客戶／頻道" }
   works: {
-    long:  [
+    long: [
       {"id": "UBe_mhVOEo8", "title": "「爸媽生存王系列」帶兩個混血寶寶玩台灣人的童年！劍湖山親子兩天一夜，蒳家人誰最有膽？Taiwan Amusement Park Challenge with Kids", "client": "佳娜祖雄“蒳家人” TT FAMILY"},
       {"id": "Z_QzWwQFdbY", "title": "【圍棋實境秀EP8】終局之戰黑嘉嘉當裁判！誰能贏下關鍵對弈奪得冠軍？｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
       {"id": "CLoWV3o5x0U", "title": "【圍棋實境秀EP7】「地獄級難度」盲棋還讓6子！亞運金牌這次會輸給2個圍棋菜鳥嗎？｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
@@ -45,23 +45,18 @@ const CONFIG = {
       {"id": "SFvLtN1Lb5U", "title": "只有29坪卻不壓迫！從三房變兩房 → 住進寬敞法式中古奶油宅｜#小林開箱 #法式中古奶油風 #新婚宅開箱  #爾聲空間 #室內設計 #室內裝潢 #儀式感", "client": "小林美家 | 爾聲空間打造你的夢想家"},
       {"id": "bxwgi3t623s", "title": "如果重來...這些我不會做！設計師入住自己家1.5年的真心話｜小林美家", "client": "小林美家 | 爾聲空間打造你的夢想家"},
       {"id": "MtgTfpKHm-g", "title": "水離子高速吹風機-小口琴_詹子晴", "client": "", "cat": "sponsored"},
-      {"id": "X9dDEl4xtUE", "title": "金鐘獎Vlog_夏和熙", "client": ""},
-      {"id": "B779FV-KPnk", "title": "宇宙星辰music party_邱宇辰", "client": ""},
-      {"id": "jD9kIYVjPt8", "title": "CeraVe適樂膚_詹子晴", "client": ""},
+      {"id": "jD9kIYVjPt8", "title": "CeraVe適樂膚_詹子晴", "client": "", "cat": "sponsored"},
       {"id": "8uB86H-i_ZQ", "title": "潮流媒體界💫首次熱血籃球賽 3 對 3！街星男籃夢幻隊拚了❤️‍🔥開賽前就掛彩🫨？到底能不能贏啊!!!", "client": "JUKSY 街星"},
       {"id": "DIFZnVpasRM", "title": "最熱門的醫美項目前三名 你加一嗎？［小晴人BabyChing ］#醫美  #醫美推薦  #醫美診所", "client": "小晴人BabyChing"},
       {"id": "tuvZiq-ROTs", "title": "平價又好看！六款顏色都超美的 HUAWEI WATCH FIT 3 竟然可以接 LINE 電話？iOS、Android 都支援 iPhone 也可用【莫娜 Moana】", "client": "莫娜 Moana in the wood"},
-      {"id": "VfEjNQDO1x8", "title": "Check2Check x P.STAR 淨顏溫感水秒機", "client": ""},
+      {"id": "VfEjNQDO1x8", "title": "Check2Check x P.STAR 淨顏溫感水秒機", "client": "", "cat": "sponsored"},
       {"id": "u9zo67Qb_h8", "title": "高CP值電腦周邊新品搶先看 ! darkFlash 今年推出的機殼、水冷、磁吸風扇、機械鍵盤【貝爾熊派】Computex 2024", "client": "貝爾熊派"},
-      {"id": "tRTp47hODSI", "title": "Adela愛得拉公司企業形象", "client": ""},
       {"id": "0HbNrKfoNvY", "title": "FIAT BARCHETTA 老車開箱🔥 你一定要懂的經典老車！帶你穿梭飛雅特的傳奇品牌之旅！像船一樣的雙門敞篷跑車？【 Monster Garage Classic】#fiat", "client": "Hyper Monster 猛獸俱樂部"},
       {"id": "aVmXSoxfo84", "title": "首創結合「移動電源」的電輔車〔 Bikniks 超電力野餐行旅車 〕", "client": "小晴人BabyChing"},
       {"id": "4W8BlgHxoHQ", "title": "施語庭《GREEN》MV 幕後花絮 Behind the scenes", "client": "硬搞娛樂 INGO Entertainment"},
       {"id": "bQG-fm9lC4M", "title": "八三夭 [ 給想要綻放的人 ] MV 拍攝 幕後花絮：小橘分享高中綻放戀愛觀 / 差點把mv拍成業配 / 綻放詞曲mv創作大解析 / 廢棄倉庫拍出最綻放mv", "client": "八三夭 831"},
       {"id": "k9MHY0veQEw", "title": "彌補家人白費青春 比別人更早被現實打臉我還是堅持嘻哈夢 ｜挺夢特攻隊EP1", "client": "Dcard報報"},
       {"id": "llGozb02icA", "title": "大聲說愛 · 大破距離～Samsung Galaxy Tab S8 Ultra", "client": "小晴人BabyChing"},
-      {"id": "KWS3orPsCAY", "title": "C2C Buy快電商年度回顧｜作品集", "client": ""},
-      {"id": "L8S_0YaxhMU", "title": "C2C BUY 第二屆快電獎頒獎典禮花絮｜作品集", "client": ""},
       {"id": "CLqnnZaq84A", "title": "登高計畫_2022陽明山會師大縱走We reach high from the ground", "client": "陽明交大_陽明課外組"},
       {"id": "mHGCGc1Wijo", "title": "Alfa romeo159 全車大改造 最帥愛快女車主【Hyper Monster Garage】", "client": "Hyper Monster 猛獸俱樂部"},
       {"id": "uMX6lHI6Tbk", "title": "「喝酒遊戲大爆料！」我到底睡過幾個人？ Feat. @tylertaile", "client": "佳娜祖雄“蒳家人” TT FAMILY"},
@@ -73,18 +68,16 @@ const CONFIG = {
       {"id": "sVh3cxpeLMg", "title": "賓士G-CLASS，G500開箱！G CAR真的是你心目中的DREAM CAR嗎？｜VIC CHEN", "client": "Vic 陳雋希"},
       {"id": "TRE61BG6-18", "title": "開箱家裡裝潢，現代輕工業風！細節、室內設計、注意事項一次分享給你｜VIC CHEN", "client": "Vic 陳雋希"},
       {"id": "9Tt6s7NcrDQ", "title": "男生長髮6種綁法！Man Bun、丸子頭、馬尾、公主頭小技巧一次告訴你｜VIC CHEN", "client": "Vic 陳雋希"},
-      {"id": "IylvxwGVimI", "title": "宇宙林思宇、胡祖薇－《全明星運動會》他是心目中男友人選?!笑料百出的姊妹檔來爆料!－CBOOK《名人說生活》專訪人物", "client": "OMO調查局"},
-      {"id": "PhXgDk60XF8", "title": "【蘿拉是我LA】找天菜整復師整骨！最後卻被女朋友抓姦在床？！", "client": "蘿拉是我LA"},
       {"id": "qPtoWon-Bkc", "title": "女裝只有0次跟無限次！聖子＆Zona 假面閨蜜約會再開結果會是...?｜Dcard報報特別企劃", "client": "Dcard報報"},
       {"id": "doZ44eqiifM", "title": "男生留長髮要注意哪些點？過渡期怎麼撐過！？男生長髮優缺點一次告訴你｜VIC CHEN", "client": "Vic 陳雋希"}
     ],
-    short: [ /* Shorts 也是填影片 ID，例如 youtube.com/shorts/XXXX → "XXXX" */ ],
+    short: [ /* Shorts 填影片 ID，例如 youtube.com/shorts/XXXX → { id: "XXXX", title: "作品名稱" } */ ],
     event: [
-      {"id": "tBcHb1ipQcE", "title": "《candy》 簽唱會邱勝翊&邱宇辰", "client": ""}
+      {"id": "tBcHb1ipQcE", "title": "《candy》 簽唱會邱勝翊&邱宇辰", "client": ""},
+      {"id": "X9dDEl4xtUE", "title": "金鐘獎Vlog_夏和熙", "client": ""},
+      {"id": "B779FV-KPnk", "title": "宇宙星辰music party_邱宇辰", "client": ""}
     ]
   },
-
-  // 聯絡資訊
   contact: {
     email: "",    // 例如 "hello@move-studio.tw"
     line:  "",    // LINE ID
@@ -96,244 +89,213 @@ const CONFIG = {
 <style>
 :root{
   --bg:#ffffff;
-  --ink:#111111;
-  --ink-2:#2a2a2a;
-  --muted:#6b6b6b;
-  --line:#e7e7e5;
-  --soft:#f6f6f4;
-  --serif:"Inter","GenYo Gothic","PingFang TC","Microsoft JhengHei",sans-serif;
-  --sans:"Inter","GenYo Gothic","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
-  --wrap:1320px;
-  --pad:clamp(20px,4vw,56px);
-  --ease:cubic-bezier(.2,.7,.1,1);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
-.eyebrow{font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500}
-.hair{height:1px;background:var(--line);border:0;margin:0}
-section{position:relative}
+  --bg-soft:#f5f5f7;
+  --fg:#0a0a0a;
+  --fg-soft:#555555;
+  --fg-mute:#8a8a8e;
+  --line:#e5e5e5;
+  --accent:#d4391c;
+  --accent-fg:#ffffff;
 
-/* ---------- Nav ---------- */
-.nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .4s var(--ease),border-color .4s;border-bottom:1px solid transparent}
-.nav.scrolled{background:rgba(255,255,255,.86);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom-color:var(--line)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
-.logo{display:flex;align-items:baseline;gap:10px}
-.logo .mark{font-family:var(--serif);font-size:24px;font-weight:600;letter-spacing:.04em}
-.logo .en{font-family:"Inter";font-size:12px;letter-spacing:.32em;font-weight:500}
-.menu{display:flex;gap:36px;align-items:center}
-.menu a{font-size:14px;letter-spacing:.06em;position:relative;padding:6px 0}
-.menu a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--ink);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
-.menu a:hover::after{transform:scaleX(1);transform-origin:left}
-.menu .cta{border:1px solid var(--ink);padding:10px 22px;border-radius:999px;transition:background .3s,color .3s}
-.menu .cta::after{display:none}
-.menu .cta:hover{background:var(--ink);color:#fff}
-.burger{display:none;width:44px;height:44px;align-items:center;justify-content:center}
-.burger span{display:block;width:22px;height:1px;background:var(--ink);position:relative}
-.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:22px;height:1px;background:var(--ink);transition:transform .3s}
-.burger span::before{top:-7px}.burger span::after{top:7px}
+  --s-xs:8px; --s-sm:16px; --s-md:32px; --s-lg:64px; --s-xl:120px;
+  --r-sm:10px; --r-md:14px; --r-lg:22px;
+
+  --sans:"Inter","GenYo Gothic",-apple-system,"PingFang TC","Noto Sans TC",sans-serif;
+  --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+  --spring:cubic-bezier(.32,.72,0,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.75;letter-spacing:.005em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+ul,ol{list-style:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+.container{max-width:1080px;margin:0 auto;padding:0 var(--s-md)}
+.caption{font-family:var(--mono);font-size:11px;line-height:1.5;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--fg-soft)}
+.mute{color:var(--fg-mute)}
+
+/* ---------- Nav (iOS glass bar) ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(255,255,255,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:.5px solid rgba(0,0,0,.12)}
+.nav .container{display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{display:flex;align-items:baseline;gap:10px;font-weight:700;font-size:17px;letter-spacing:.02em}
+.logo .en{font-family:var(--mono);font-size:11px;letter-spacing:.24em;font-weight:500;color:var(--fg-soft)}
+.menu{display:flex;align-items:center;gap:28px;font-size:14px}
+.menu a{color:var(--fg-soft);transition:color .2s}
+.menu a:hover{color:var(--fg)}
+.menu .cta{background:var(--fg);color:#fff;padding:7px 16px;border-radius:999px;font-weight:500;transition:transform .3s var(--spring),background .2s}
+.menu .cta:hover{color:#fff;background:#000;transform:scale(1.03)}
+.burger{display:none;width:44px;height:44px;align-items:center;justify-content:center;margin-right:-10px}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:1.5px;background:var(--fg);border-radius:2px;position:relative;transition:transform .35s var(--spring),background .2s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
 .nav.open .burger span{background:transparent}
-.nav.open .burger span::before{transform:translateY(7px) rotate(45deg)}
-.nav.open .burger span::after{transform:translateY(-7px) rotate(-45deg)}
+.nav.open .burger span::before{transform:translateY(6px) rotate(45deg)}
+.nav.open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
 
 /* ---------- Hero ---------- */
-.hero{padding:168px 0 72px}
-.hero-top{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:end}
-.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(40px,6.4vw,96px);line-height:1.2;letter-spacing:.02em;margin:22px 0 0}
-.hero h1 em{font-style:normal;color:var(--muted)}
-.hero-side{padding-bottom:14px}
-.hero-side p{margin:0 0 22px;color:var(--ink-2);font-size:16px}
-.hero-side .en{font-family:"Inter";font-size:13px;letter-spacing:.04em;color:var(--muted);font-style:italic}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.tags span{font-size:13px;border:1px solid var(--line);padding:6px 14px;border-radius:999px;color:var(--ink-2)}
-.frame{position:relative;width:100%;aspect-ratio:16/9;background:var(--soft);overflow:hidden}
-.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.frame.v{aspect-ratio:9/16}
+.hero{padding:200px 0 140px}
+.hero-issue{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--fg-soft);margin-bottom:72px;display:flex;flex-wrap:wrap;gap:12px var(--s-md);text-transform:uppercase}
+.hero-issue .dot{color:var(--fg-mute)}
+.hero-title{font-size:clamp(52px,8.6vw,112px);font-weight:700;line-height:1.08;letter-spacing:-.03em;max-width:14ch}
+.hero-title .soft{color:var(--fg-mute)}
+.hero-en{font-family:var(--mono);font-size:13px;letter-spacing:.18em;color:var(--fg-soft);margin-top:var(--s-md);text-transform:uppercase}
+.hero-meta{margin-top:80px;display:grid;grid-template-columns:200px 1fr;row-gap:var(--s-sm);column-gap:var(--s-lg);font-size:15px}
+.hero-meta dt{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-mute);font-weight:500;padding-top:4px}
+.hero-cta{margin-top:80px;display:inline-flex;align-items:baseline;gap:var(--s-sm);font-size:18px;font-weight:500;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:6px;transition:gap .35s var(--spring)}
+.hero-cta:hover{gap:24px}
+.hero-cta .arrow{font-family:var(--mono)}
 
-/* ---------- Marquee ---------- */
-.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:26px 0;white-space:nowrap}
-.marquee-track{display:inline-flex;animation:scroll 38s linear infinite}
-.marquee-track span{font-family:"Inter";font-weight:300;font-size:clamp(28px,4vw,56px);letter-spacing:.06em;padding:0 28px;display:inline-flex;align-items:center;gap:56px}
-.marquee-track span i{font-style:normal;font-size:.4em;color:var(--muted)}
-@keyframes scroll{to{transform:translateX(-50%)}}
+/* ---------- Sections ---------- */
+.section{padding:var(--s-xl) 0}
+.section-header{display:grid;grid-template-columns:200px 1fr;gap:var(--s-lg);margin-bottom:var(--s-lg);align-items:baseline}
+.section-header .index{color:var(--fg-mute)}
+.h1{font-size:clamp(34px,4.6vw,52px);line-height:1.15;font-weight:700;letter-spacing:-.02em}
+.section-header p{color:var(--fg-soft);margin-top:var(--s-sm);max-width:56ch}
 
-/* ---------- Section head ---------- */
-.block{padding:clamp(96px,12vw,160px) 0}
-.head{display:grid;grid-template-columns:240px 1fr;gap:48px;margin-bottom:64px}
-.head h2{font-family:var(--serif);font-weight:500;font-size:clamp(30px,3.6vw,52px);line-height:1.3;margin:0}
-.head p{color:var(--muted);margin:16px 0 0;max-width:640px}
+/* ---------- Services (list rows) ---------- */
+.rows{border-top:1px solid var(--fg)}
+.row{display:grid;grid-template-columns:56px 1fr 1.4fr;gap:var(--s-md);padding:28px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.row .idx{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--fg-mute)}
+.row .name{font-size:20px;font-weight:600;letter-spacing:-.01em;line-height:1.4}
+.row .name .en{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--fg-mute);margin-top:6px;font-weight:400;text-transform:uppercase}
+.row p{color:var(--fg-soft);font-size:14px}
 
-/* ---------- Services ---------- */
-.svc{border-top:1px solid var(--ink)}
-.svc-row{display:grid;grid-template-columns:240px 1.1fr 1fr 40px;gap:48px;padding:40px 0;border-bottom:1px solid var(--line);align-items:start;transition:padding .5s var(--ease)}
-.svc-row:hover{padding-left:12px}
-.svc-row .no{font-family:"Inter";font-size:13px;letter-spacing:.18em;color:var(--muted);padding-top:10px}
-.svc-row h3{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.2vw,30px);margin:0;line-height:1.4}
-.svc-row h3 small{display:block;font-family:"Inter";font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:8px;font-weight:500}
-.svc-row p{margin:4px 0 0;color:var(--ink-2)}
-.svc-row .arrow{padding-top:10px;transition:transform .4s var(--ease)}
-.svc-row:hover .arrow{transform:translateX(6px)}
+/* ---------- Approach ---------- */
+.lede{font-size:clamp(24px,2.8vw,34px);font-weight:500;line-height:1.55;letter-spacing:-.01em;max-width:28ch}
+.lede .soft{color:var(--fg-mute)}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-lg);border-top:1px solid var(--line);padding-top:var(--s-lg);margin-top:var(--s-lg)}
+.pillar h3{font-size:22px;font-weight:600;letter-spacing:-.01em;margin:var(--s-sm) 0 var(--s-xs)}
+.pillar p{color:var(--fg-soft);font-size:14px}
 
-/* ---------- Statement ---------- */
-.statement{background:var(--soft)}
-.statement blockquote{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.4vw,48px);line-height:1.6;max-width:1100px}
-.statement blockquote span{color:var(--muted)}
-.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:80px;border-top:1px solid var(--line)}
-.pillar{padding:36px 36px 0 0}
-.pillar + .pillar{padding-left:36px;border-left:1px solid var(--line)}
-.pillar .k{font-family:"Inter";font-size:12px;letter-spacing:.2em;color:var(--muted)}
-.pillar h4{font-family:var(--serif);font-weight:500;font-size:24px;margin:14px 0 10px}
-.pillar p{margin:0;color:var(--ink-2);font-size:15px}
-
-/* ---------- Works ---------- */
-.tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin-bottom:48px;overflow-x:auto}
-.tab{padding:16px 22px;font-size:15px;color:var(--muted);border-bottom:1px solid transparent;margin-bottom:-1px;white-space:nowrap;min-height:44px;transition:color .3s}
-.tab sup{font-family:"Inter";font-size:11px;margin-left:4px;letter-spacing:.06em}
-.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+/* ---------- iOS segmented control ---------- */
+.seg{position:relative;display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;background:#ececf0;border-radius:11px;padding:3px;max-width:100%}
+.seg button{position:relative;z-index:1;padding:8px 22px;min-height:40px;font-size:14px;font-weight:500;color:var(--fg-soft);border-radius:8px;white-space:nowrap;transition:color .25s}
+.seg button[aria-selected="true"],.seg button[aria-pressed="true"]{color:var(--fg)}
+.seg button sup{font-family:var(--mono);font-size:10px;margin-left:4px;color:var(--fg-mute);letter-spacing:.04em}
+.seg .thumb-ind{position:absolute;z-index:0;top:3px;bottom:3px;left:3px;border-radius:8px;background:#fff;box-shadow:0 3px 8px rgba(0,0,0,.12),0 3px 1px rgba(0,0,0,.04),0 0 0 .5px rgba(0,0,0,.04);transition:transform .45s var(--spring),width .45s var(--spring)}
+.seg.small{background:transparent;padding:0;gap:8px;display:flex;flex-wrap:wrap}
+.seg.small button{border:1px solid var(--line);border-radius:999px;padding:6px 16px;min-height:36px;font-size:13px;transition:all .25s}
+.seg.small button[aria-pressed="true"]{background:var(--fg);border-color:var(--fg);color:#fff}
+.seg.small button[aria-pressed="true"] sup{color:rgba(255,255,255,.6)}
+.works-bar{display:flex;justify-content:space-between;align-items:center;gap:var(--s-sm);flex-wrap:wrap;margin-bottom:var(--s-md)}
+.pl-link{font-size:14px;color:var(--accent);display:inline-flex;gap:8px;align-items:baseline;min-height:44px;align-items:center}
+.pl-link .arrow{font-family:var(--mono)}
+.subbar{margin-bottom:var(--s-lg)}
 .panel{display:none}
-.panel.active{display:block;animation:fade .6s var(--ease)}
-@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.pl{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 48px;flex-wrap:wrap;margin-bottom:40px}
-.pl-info h3{font-family:var(--serif);font-weight:500;font-size:24px;margin:0 0 6px}
-.pl-info p{color:var(--muted);margin:0;font-size:15px}
-.work .frame{background:var(--soft)}
-.link-btn{display:inline-flex;align-items:center;gap:10px;font-size:14px;border-bottom:1px solid var(--ink);padding-bottom:4px;min-height:44px}
-.grid-label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px}
-.grid-label h4{font-family:var(--serif);font-weight:500;font-size:20px;margin:0}
-.works{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 28px}
-.works.vert{grid-template-columns:repeat(4,1fr)}
-.work .thumb{position:relative;aspect-ratio:16/9;background:var(--soft);overflow:hidden;cursor:pointer;width:100%;display:block;padding:0}
-.works.vert .work .thumb{aspect-ratio:9/16}
-.work .thumb img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
-.work .thumb:hover img{transform:scale(1.04)}
-.work .thumb .play{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;transition:transform .4s var(--ease)}
-.work .thumb:hover .play{transform:scale(1.08)}
-.work .thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.work .cap{margin-top:14px;display:flex;flex-direction:column;gap:4px;font-size:14px;line-height:1.6}
-.work .cap b{font-weight:500;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.work .cap span{color:var(--muted);font-size:13px}
-.work.hidden{display:none}
-.more-wrap{display:flex;justify-content:center;margin-top:56px}
-.more{border:1px solid var(--ink);border-radius:999px;padding:14px 32px;font-size:14px;letter-spacing:.06em;min-height:44px;transition:background .3s,color .3s}
-.more:hover{background:var(--ink);color:#fff}
-.more[hidden]{display:none}
-.work.empty .thumb{cursor:default;border:1px dashed #d4d4d0;background:#fbfbfa;display:flex;align-items:center;justify-content:center}
-.work.empty .thumb em{font-style:normal;font-family:"Inter";font-size:12px;letter-spacing:.2em;color:#8a8a86}
+.panel.active{display:block;animation:rise .6s var(--spring)}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 
-.subtabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px}
-.chip{border:1px solid var(--line);border-radius:999px;padding:10px 20px;font-size:14px;min-height:44px;color:var(--ink-2);transition:background .3s,color .3s,border-color .3s}
-.chip sup{font-family:"Inter";font-size:11px;margin-left:4px}
-.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
-.group{margin-bottom:72px}
-.group-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid var(--ink);padding-top:18px;margin-bottom:24px}
-.group-head h4{font-family:var(--serif);font-weight:500;font-size:20px;margin:0}
-.group .more-wrap{margin-top:32px}
+/* ---------- Groups & cards ---------- */
+.group{margin-bottom:var(--s-lg)}
+.group-head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s-sm);padding-bottom:var(--s-sm);margin-bottom:var(--s-md);border-bottom:1px solid var(--line)}
+.group-head h3{font-size:18px;font-weight:600;letter-spacing:-.005em}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 24px}
+.work.hidden{display:none}
+.card{position:relative;display:block;width:100%;aspect-ratio:16/9;border-radius:var(--r-md);overflow:hidden;background:var(--bg-soft);transform:translateZ(0)}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--spring)}
+.card:hover img{transform:scale(1.04)}
+.card .play{position:absolute;left:14px;bottom:14px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.78);backdrop-filter:blur(12px) saturate(180%);-webkit-backdrop-filter:blur(12px) saturate(180%);display:flex;align-items:center;justify-content:center;transition:transform .4s var(--spring)}
+.card:hover .play{transform:scale(1.1)}
+.card iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.work .t{margin-top:14px;font-size:14px;font-weight:500;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.work .n{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--fg-mute);margin-top:4px}
+.more{margin-top:var(--s-md);font-size:14px;color:var(--fg-soft);display:inline-flex;gap:8px;align-items:center;min-height:44px;border-bottom:1px solid var(--line);transition:color .2s,border-color .2s}
+.more:hover{color:var(--fg);border-color:var(--fg)}
+.empty-state{border-radius:var(--r-lg);background:var(--bg-soft);padding:72px var(--s-md);text-align:center}
+.empty-state h3{font-size:20px;font-weight:600;margin:var(--s-sm) 0 var(--s-xs)}
+.empty-state p{color:var(--fg-soft);font-size:14px;margin-bottom:var(--s-sm)}
 
 /* ---------- About ---------- */
-.about{display:grid;grid-template-columns:240px 1fr 1fr;gap:48px}
-.about h2{font-family:var(--serif);font-weight:500;font-size:clamp(30px,3.6vw,52px);line-height:1.3;margin:0 0 6px}
-.about .role{font-size:14px;color:var(--muted);letter-spacing:.04em}
-.about .lead{font-family:var(--serif);font-size:22px;line-height:1.75;margin:0}
-.about ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.about li{padding:18px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:36px 1fr;font-size:15px;color:var(--ink-2)}
-.about li i{font-style:normal;font-family:"Inter";font-size:12px;color:var(--muted);padding-top:3px}
-.who{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
-.who span{font-size:14px;padding:10px 18px;background:var(--soft);border-radius:999px}
+.about-grid{display:grid;grid-template-columns:200px 1fr;gap:var(--s-lg)}
+.about-name{font-size:22px;font-weight:600}
+.about-role{color:var(--fg-soft);font-size:14px;margin-top:4px}
+.stats{margin-top:var(--s-lg);border-top:1px solid var(--line)}
+.stats li{display:grid;grid-template-columns:56px 1fr;padding:18px 0;border-bottom:1px solid var(--line);font-size:15px;align-items:baseline}
+.stats .idx{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--fg-mute)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--s-md)}
+.tags span{font-size:13px;padding:6px 14px;border-radius:999px;background:var(--bg-soft);color:var(--fg-soft)}
 
-/* ---------- Workflow ---------- */
-.flow{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--ink)}
-.step{padding:28px 20px 0 0}
-.step + .step{padding-left:20px;border-left:1px solid var(--line)}
-.step .n{font-family:"Inter";font-weight:300;font-size:44px;line-height:1;letter-spacing:-.02em}
-.step h4{font-family:var(--serif);font-weight:500;font-size:18px;margin:22px 0 8px}
-.step p{margin:0;font-size:14px;color:var(--muted);line-height:1.7}
+/* ---------- Workflow (table) ---------- */
+.flow{width:100%;border-collapse:collapse}
+.flow th,.flow td{text-align:left;padding:18px 0;border-bottom:1px solid var(--line);vertical-align:baseline;font-size:15px}
+.flow th{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-mute);font-weight:500;border-bottom:1px solid var(--fg)}
+.flow td.idx{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--fg-mute);width:80px}
+.flow td.step{font-weight:600;width:200px}
+.flow td.desc{color:var(--fg-soft)}
 
-/* ---------- Contact ---------- */
-.contact{border-top:1px solid var(--line)}
-.contact-top{display:grid;grid-template-columns:1.1fr .9fr;gap:80px}
-.contact h2{font-family:var(--serif);font-weight:500;font-size:clamp(40px,5.6vw,84px);line-height:1.2;margin:18px 0 28px}
-.contact .info{display:grid;gap:0;border-top:1px solid var(--line);margin-top:40px}
-.contact .info div{display:grid;grid-template-columns:110px 1fr;padding:16px 0;border-bottom:1px solid var(--line);font-size:15px}
-.contact .info dt{color:var(--muted);font-size:13px;letter-spacing:.1em}
-.contact .info dd{margin:0}
-form{display:grid;grid-template-columns:1fr 1fr;gap:28px 24px}
-.field{display:flex;flex-direction:column;gap:6px}
-.field.full{grid-column:1/-1}
-label{font-size:13px;color:var(--muted);letter-spacing:.06em}
-input,select,textarea{font:inherit;font-size:16px;color:var(--ink);background:transparent;border:0;border-bottom:1px solid #cfcfcb;padding:10px 0;border-radius:0;outline:none;transition:border-color .3s;appearance:none;-webkit-appearance:none}
-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23111' stroke-width='1.2'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center;padding-right:24px}
-textarea{resize:vertical;min-height:110px}
-input:focus,select:focus,textarea:focus{border-bottom-color:var(--ink)}
-.submit{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:14px;background:var(--ink);color:#fff;padding:18px 34px;border-radius:999px;font-size:15px;letter-spacing:.06em;transition:transform .3s var(--ease),background .3s}
-.btn:hover{background:#000;transform:translateY(-2px)}
-.form-note{font-size:13px;color:var(--muted)}
+/* ---------- Contact (iOS grouped form) ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-lg)}
+.contact-title{font-size:clamp(40px,6vw,72px);font-weight:700;line-height:1.08;letter-spacing:-.03em}
+.info{margin-top:var(--s-lg);display:grid;grid-template-columns:120px 1fr;row-gap:var(--s-sm);column-gap:var(--s-md);font-size:15px}
+.info dt{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-mute);padding-top:4px}
+.form-group{background:var(--bg-soft);border-radius:var(--r-md);overflow:hidden;margin-bottom:var(--s-md)}
+.form-group .field{display:grid;grid-template-columns:110px 1fr;align-items:center;padding:0 var(--s-sm);min-height:52px;position:relative}
+.form-group .field + .field::before{content:"";position:absolute;left:var(--s-sm);right:0;top:0;height:.5px;background:rgba(0,0,0,.14)}
+.form-group .field.stack{grid-template-columns:1fr;padding-top:14px;padding-bottom:6px}
+.form-group label{font-size:15px;color:var(--fg)}
+.form-group input,.form-group select,.form-group textarea{font:inherit;font-size:16px;color:var(--fg);background:transparent;border:0;outline:none;padding:14px 0;width:100%;appearance:none;-webkit-appearance:none;border-radius:0}
+.form-group input::placeholder,.form-group textarea::placeholder{color:#b0b0b5}
+.form-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='13' fill='none' stroke='%23b0b0b5' stroke-width='2'%3E%3Cpath d='M1 1l5.5 5.5L1 12'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center;padding-right:20px;color:var(--fg-soft)}
+.form-group textarea{min-height:120px;resize:vertical;padding-top:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:52px;border-radius:var(--r-md);background:var(--accent);color:var(--accent-fg);font-size:17px;font-weight:600;transition:transform .3s var(--spring),opacity .2s}
+.btn:active{transform:scale(.98);opacity:.85}
+.form-note{font-size:13px;color:var(--fg-mute);margin-top:var(--s-sm);text-align:center}
 
 /* ---------- Footer ---------- */
-footer{padding:80px 0 40px;border-top:1px solid var(--line)}
-.foot{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
-.foot .big{font-family:"Inter";font-weight:300;font-size:clamp(56px,11vw,180px);line-height:.9;letter-spacing:-.03em}
-.foot nav{display:flex;gap:28px;font-size:14px;flex-wrap:wrap}
-.copy{display:flex;justify-content:space-between;margin-top:48px;font-size:12px;color:var(--muted);letter-spacing:.06em;flex-wrap:wrap;gap:12px}
+footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;gap:var(--s-md);flex-wrap:wrap;align-items:baseline}
+.foot nav{display:flex;gap:24px;flex-wrap:wrap;font-size:14px;color:var(--fg-soft)}
+.foot nav a:hover{color:var(--fg)}
 
 /* ---------- Reveal ---------- */
-.rv{opacity:0;transform:translateY(24px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .9s var(--spring),transform .9s var(--spring)}
 .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.marquee-track{animation:none}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
 
 /* ---------- Responsive ---------- */
-@media (max-width:1080px){
-  .svc-row{grid-template-columns:120px 1fr 1fr}
-  .svc-row .arrow{display:none}
-  .head,.about{grid-template-columns:1fr;gap:20px}
-  .flow{grid-template-columns:repeat(3,1fr)}
-  .flow .step:nth-child(4){padding-left:0;border-left:0}
-  .flow .step:nth-child(n+4){margin-top:40px}
-  .works.vert{grid-template-columns:repeat(3,1fr)}
-}
 @media (max-width:860px){
-  .menu{position:fixed;inset:76px 0 auto 0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;padding:12px var(--pad) 28px;border-bottom:1px solid var(--line);transform:translateY(-8px);opacity:0;pointer-events:none;transition:all .35s var(--ease)}
-  .menu a{width:100%;padding:16px 0;border-bottom:1px solid var(--line);font-size:16px}
-  .menu .cta{margin-top:18px;width:auto;border-bottom:1px solid var(--ink)}
+  .container{padding:0 20px}
+  .menu{position:fixed;top:56px;left:12px;right:12px;flex-direction:column;align-items:stretch;gap:0;padding:6px 0;background:rgba(255,255,255,.86);backdrop-filter:saturate(180%) blur(24px);-webkit-backdrop-filter:saturate(180%) blur(24px);border-radius:var(--r-md);box-shadow:0 12px 40px rgba(0,0,0,.14);transform:scale(.96) translateY(-8px);transform-origin:top right;opacity:0;pointer-events:none;transition:transform .4s var(--spring),opacity .25s}
+  .menu a{padding:13px 18px;font-size:16px;color:var(--fg);position:relative}
+  .menu a + a::before{content:"";position:absolute;left:18px;right:0;top:0;height:.5px;background:rgba(0,0,0,.12)}
+  .menu .cta{margin:8px 12px 6px;text-align:center;border-radius:12px;padding:12px}
+  .menu .cta::before{display:none}
   .nav.open .menu{opacity:1;transform:none;pointer-events:auto}
-  .nav.open{background:#fff;border-bottom-color:var(--line)}
   .burger{display:flex}
-  .hero{padding-top:128px}
-  .hero-top,.contact-top{grid-template-columns:1fr;gap:32px}
-  .svc-row{grid-template-columns:1fr;gap:10px;padding:32px 0}
-  .svc-row .no{padding-top:0}
-  .pillars{grid-template-columns:1fr}
-  .pillar,.pillar + .pillar{padding:28px 0;border-left:0;border-bottom:1px solid var(--line)}
-  .works{grid-template-columns:1fr 1fr;gap:32px 16px}
-  .works.vert{grid-template-columns:1fr 1fr}
-  .flow{grid-template-columns:1fr 1fr}
-  .flow .step{padding:24px 16px 0 0!important;border-left:0!important;margin-top:24px}
-  form{grid-template-columns:1fr}
-  .foot{grid-template-columns:1fr}
+  .hero{padding:140px 0 96px}
+  .hero-issue{margin-bottom:48px}
+  .hero-meta,.section-header,.about-grid,.contact-grid{grid-template-columns:1fr;gap:var(--s-sm) var(--s-md)}
+  .hero-meta dd{margin-bottom:8px}
+  .section{padding:88px 0}
+  .section-header{margin-bottom:var(--s-md)}
+  .row{grid-template-columns:40px 1fr;gap:8px var(--s-sm)}
+  .row p{grid-column:2}
+  .pillars{grid-template-columns:1fr;gap:var(--s-md)}
+  .grid{grid-template-columns:1fr 1fr;gap:28px 14px}
+  .seg{display:grid;width:100%}
+  .seg button{padding:8px 10px}
+  .flow td.step{width:auto}
+  .flow th:last-child,.flow td.desc{display:none}
 }
 @media (max-width:520px){
-  .works{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- ============ NAV ============ -->
 <header class="nav" id="nav">
-  <div class="wrap">
-    <a href="#top" class="logo" aria-label="霂影像 MOVE Studio 回到頂部">
-      <span class="mark">霂影像</span><span class="en">MOVE</span>
-    </a>
+  <div class="container">
+    <a href="#top" class="logo" aria-label="霂影像 MOVE Studio 回到頂部">霂影像<span class="en">MOVE</span></a>
     <nav class="menu" id="menu" aria-label="主選單">
-      <a href="#services">服務項目</a>
-      <a href="#works">作品集</a>
-      <a href="#about">關於我們</a>
-      <a href="#workflow">合作流程</a>
-      <a href="#contact" class="cta">聯絡我們</a>
+      <a href="#services">服務</a>
+      <a href="#works">作品</a>
+      <a href="#about">關於</a>
+      <a href="#workflow">流程</a>
+      <a href="#contact" class="cta">聯絡合作</a>
     </nav>
     <button class="burger" id="burger" aria-label="開啟選單" aria-expanded="false" aria-controls="menu"><span></span></button>
   </div>
@@ -343,258 +305,181 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line)}
 
 <!-- ============ HERO ============ -->
 <section class="hero">
-  <div class="wrap">
-    <div class="hero-top">
-      <div class="rv">
-        <div class="eyebrow">Move Studio — Video Production &amp; Editing</div>
-        <h1>用剛好的成本，<br>說<em>對的</em>故事。</h1>
-      </div>
-      <div class="hero-side rv">
-        <p>霂影像是一間小而精準的影像團隊。我們專注 YouTube 長片、短影音與品牌業配拍攝——先聽懂你真正要什麼，再寫出剛好適合你的腳本。</p>
-        <div class="en">Small crew. Sharp scripts. Stories that move.</div>
-        <div class="tags"><span>YouTube 長片</span><span>短影音</span><span>業配拍攝</span><span>剪輯後製</span></div>
-      </div>
-    </div>
-
+  <div class="container">
+    <div class="hero-issue rv"><span>Move Studio</span><span class="dot">·</span><span>Video Production</span><span class="dot">·</span><span>Taipei</span></div>
+    <h1 class="hero-title rv">用剛好的成本，<br>說<span class="soft">對的</span>故事。</h1>
+    <p class="hero-en rv">Small crew — Sharp scripts — Stories that move</p>
+    <dl class="hero-meta rv">
+      <dt>Services</dt><dd>YouTube 長片・短影音・業配拍攝・剪輯後製・活動紀錄</dd>
+      <dt>Approach</dt><dd>先聽懂你真正要什麼，再寫出剛好適合你的腳本</dd>
+      <dt>Based in</dt><dd>新北市・台北市</dd>
+    </dl>
+    <a class="hero-cta rv" href="#contact">聯絡合作 <span class="arrow">→</span></a>
   </div>
 </section>
-
-<!-- ============ MARQUEE ============ -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>YOUTUBE <i>✦</i> SHORTS <i>✦</i> BRANDED <i>✦</i> SCRIPT <i>✦</i> EDITING <i>✦</i> STORY <i>✦</i></span>
-    <span>YOUTUBE <i>✦</i> SHORTS <i>✦</i> BRANDED <i>✦</i> SCRIPT <i>✦</i> EDITING <i>✦</i> STORY <i>✦</i></span>
-  </div>
-</div>
 
 <!-- ============ SERVICES ============ -->
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="head rv">
-      <div class="eyebrow">Services</div>
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-header rv">
+      <span class="caption index">01 — Services</span>
       <div>
-        <h2>從腳本到成片，<br>一條龍完成。</h2>
-        <p>不需要出動整組劇組，也能做出有質感、有節奏的影片。我們依照你的目標與預算，配置剛好的人力與流程。</p>
+        <h2 class="h1">從腳本到成片，一條龍完成。</h2>
+        <p>不需要出動整組劇組，也能做出有質感、有節奏的影片。依照你的目標與預算，配置剛好的人力與流程。</p>
       </div>
     </div>
-
-    <div class="svc">
-      <div class="svc-row rv">
-        <span class="no">01</span>
-        <h3>YouTube 長片<small>Long-form YouTube</small></h3>
-        <p>企劃、拍攝到剪輯全包。掌握敘事節奏與段落邏輯，讓觀眾一路看到最後，也讓頻道風格穩定一致。</p>
-        <span class="arrow" aria-hidden="true"><svg width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 6h20M15 1l5 5-5 5"/></svg></span>
-      </div>
-      <div class="svc-row rv">
-        <span class="no">02</span>
-        <h3>短影音<small>Reels · Shorts · TikTok</small></h3>
-        <p>前三秒抓住注意力。直式構圖、字幕節奏與 hook 設計，專為各平台演算法與滑動習慣打造。</p>
-        <span class="arrow" aria-hidden="true"><svg width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 6h20M15 1l5 5-5 5"/></svg></span>
-      </div>
-      <div class="svc-row rv">
-        <span class="no">03</span>
-        <h3>業配拍攝<small>Branded Content</small></h3>
-        <p>把品牌訊息自然寫進創作者的語言。不硬塞、不尷尬，讓觀眾記住產品，也不失去對頻道的信任。</p>
-        <span class="arrow" aria-hidden="true"><svg width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 6h20M15 1l5 5-5 5"/></svg></span>
-      </div>
-      <div class="svc-row rv">
-        <span class="no">04</span>
-        <h3>剪輯後製<small>Post-production</small></h3>
-        <p>可單獨承接剪輯。調光調色、字幕包裝、音效配樂，梳理素材邏輯，把畫面整理成好看又好懂的作品。</p>
-        <span class="arrow" aria-hidden="true"><svg width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 6h20M15 1l5 5-5 5"/></svg></span>
-      </div>
-      <div class="svc-row rv">
-        <span class="no">05</span>
-        <h3>活動紀錄<small>Event Film</small></h3>
-        <p>記者會、品牌活動、市集與講座。現場捕捉關鍵時刻，快速交付精華影片與社群素材。</p>
-        <span class="arrow" aria-hidden="true"><svg width="22" height="12" viewBox="0 0 22 12" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 6h20M15 1l5 5-5 5"/></svg></span>
-      </div>
+    <div class="rows">
+      <div class="row rv"><span class="idx">01</span><div class="name">YouTube 長片<span class="en">Long-form YouTube</span></div><p>企劃、拍攝到剪輯全包。掌握敘事節奏與段落邏輯，讓觀眾一路看到最後，也讓頻道風格穩定一致。</p></div>
+      <div class="row rv"><span class="idx">02</span><div class="name">短影音<span class="en">Reels · Shorts · TikTok</span></div><p>前三秒抓住注意力。直式構圖、字幕節奏與 hook 設計，專為各平台演算法與滑動習慣打造。</p></div>
+      <div class="row rv"><span class="idx">03</span><div class="name">業配拍攝<span class="en">Branded Content</span></div><p>把品牌訊息自然寫進創作者的語言。不硬塞、不尷尬，讓觀眾記住產品，也不失去對頻道的信任。</p></div>
+      <div class="row rv"><span class="idx">04</span><div class="name">剪輯後製<span class="en">Post-production</span></div><p>可單獨承接剪輯。調光調色、字幕包裝、音效配樂，把素材整理成好看又好懂的作品。</p></div>
+      <div class="row rv"><span class="idx">05</span><div class="name">活動紀錄<span class="en">Event Film</span></div><p>記者會、品牌活動、簽唱會與講座。現場捕捉關鍵時刻，快速交付精華影片與社群素材。</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============ STATEMENT ============ -->
-<section class="block statement">
-  <div class="wrap">
-    <div class="eyebrow rv" style="margin-bottom:32px">Our Approach</div>
-    <blockquote class="rv">我們不是動輒出動整組劇組的大型廣告公司。<span>我們是一支精準的小型影像團隊——</span>先把你的需求聽懂，再寫出真正適合你的腳本。</blockquote>
-
+<!-- ============ APPROACH ============ -->
+<section class="section" style="background:var(--bg-soft)">
+  <div class="container">
+    <div class="section-header rv">
+      <span class="caption index">02 — Approach</span>
+      <p class="lede">我們不是動輒出動整組劇組的大型廣告公司。<span class="soft">我們是一支精準的小型影像團隊——</span>先把需求聽懂，再寫出真正適合你的腳本。</p>
+    </div>
     <div class="pillars">
-      <div class="pillar rv">
-        <div class="k">01 / LISTEN</div>
-        <h4>精準需求</h4>
-        <p>從目標受眾、平台到預期成效，先釐清你真正要解決的問題，而不是只拍一支「好看」的影片。</p>
-      </div>
-      <div class="pillar rv">
-        <div class="k">02 / SCRIPT</div>
-        <h4>合適腳本</h4>
-        <p>依照品牌調性與頻道語氣量身寫腳本，讓每一個鏡頭都有存在的理由。</p>
-      </div>
-      <div class="pillar rv">
-        <div class="k">03 / FLEXIBLE</div>
-        <h4>彈性成本</h4>
-        <p>小團隊、高機動。把預算花在畫面上，而不是花在用不到的人力與器材。</p>
-      </div>
+      <div class="pillar rv"><span class="caption">01 / Listen</span><h3>精準需求</h3><p>從目標受眾、平台到預期成效，先釐清真正要解決的問題，而不是只拍一支「好看」的影片。</p></div>
+      <div class="pillar rv"><span class="caption">02 / Script</span><h3>合適腳本</h3><p>依照品牌調性與頻道語氣量身寫腳本，讓每一個鏡頭都有存在的理由。</p></div>
+      <div class="pillar rv"><span class="caption">03 / Flexible</span><h3>彈性成本</h3><p>小團隊、高機動。把預算花在畫面上，而不是花在用不到的人力與器材。</p></div>
     </div>
   </div>
 </section>
 
 <!-- ============ WORKS ============ -->
-<section class="block" id="works">
-  <div class="wrap">
-    <div class="head rv">
-      <div class="eyebrow">Works</div>
+<section class="section" id="works">
+  <div class="container">
+    <div class="section-header rv">
+      <span class="caption index">03 — Works</span>
       <div>
-        <h2>作品集</h2>
-        <p>YouTube 長片、短影音與活動紀錄。點選分類瀏覽完整播放清單與精選作品。</p>
+        <h2 class="h1">作品集</h2>
+        <p>點縮圖即可在頁面上直接播放。</p>
       </div>
     </div>
 
-    <div class="tabs rv" role="tablist" aria-label="作品分類">
-      <button class="tab" role="tab" aria-selected="true" aria-controls="p-long" id="t-long">YouTube 長片<sup id="c-long"></sup></button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p-short" id="t-short">短影音<sup id="c-short"></sup></button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p-event" id="t-event">活動紀錄<sup id="c-event"></sup></button>
+    <div class="works-bar rv">
+      <div class="seg" role="tablist" aria-label="作品分類" id="seg-main">
+        <span class="thumb-ind" aria-hidden="true"></span>
+        <button role="tab" aria-selected="true" aria-controls="p-long" id="t-long">YouTube 長片<sup id="c-long"></sup></button>
+        <button role="tab" aria-selected="false" aria-controls="p-short" id="t-short">短影音<sup id="c-short"></sup></button>
+        <button role="tab" aria-selected="false" aria-controls="p-event" id="t-event">活動紀錄<sup id="c-event"></sup></button>
+      </div>
+      <a class="pl-link" id="pl-link" href="#" target="_blank" rel="noopener">完整播放清單 <span class="arrow">↗</span></a>
     </div>
 
-    <!-- 長片 -->
     <div class="panel active" role="tabpanel" id="p-long" aria-labelledby="t-long">
-      <div class="pl">
-        <div class="pl-info">
-          <h3>YouTube 長片</h3>
-          <p>頻道長片、訪談節目與 Vlog，從企劃、拍攝到剪輯的完整作品。</p>
-        </div>
-        <a class="link-btn" data-pl-link="long" href="#" target="_blank" rel="noopener">觀看完整播放清單 <span aria-hidden="true">→</span></a>
-      </div>
-      <div class="subtabs" aria-label="YouTube 長片分類">
-        <button class="chip" data-sub="channel" aria-pressed="true">頻道合作<sup></sup></button>
-        <button class="chip" data-sub="reality" aria-pressed="false">實境秀<sup></sup></button>
-        <button class="chip" data-sub="sponsored" aria-pressed="false">業配拍攝<sup></sup></button>
+      <div class="seg small subbar" aria-label="YouTube 長片分類" id="seg-sub">
+        <button data-sub="channel" aria-pressed="true">頻道合作<sup></sup></button>
+        <button data-sub="reality" aria-pressed="false">實境秀<sup></sup></button>
+        <button data-sub="sponsored" aria-pressed="false">業配拍攝<sup></sup></button>
       </div>
       <div id="w-long"></div>
     </div>
-
-    <!-- 短影音 -->
-    <div class="panel" role="tabpanel" id="p-short" aria-labelledby="t-short">
-      <div class="pl">
-        <div class="pl-info">
-          <h3>短影音</h3>
-          <p>Reels、Shorts 與 TikTok 直式短影音，包含品牌業配與創作者合作。</p>
-        </div>
-        <a class="link-btn" data-pl-link="short" href="#" target="_blank" rel="noopener">觀看完整播放清單 <span aria-hidden="true">→</span></a>
-      </div>
-      <div class="works vert" id="w-short"></div>
-      <div class="more-wrap"><button class="more" id="m-short" hidden>顯示更多作品（剩 <span></span> 支）</button></div>
-    </div>
-
-    <!-- 活動紀錄 -->
-    <div class="panel" role="tabpanel" id="p-event" aria-labelledby="t-event">
-      <div class="pl">
-        <div class="pl-info">
-          <h3>活動紀錄</h3>
-          <p>品牌活動、記者會與現場紀錄的精華影片。</p>
-        </div>
-        <a class="link-btn" data-pl-link="event" href="#" target="_blank" rel="noopener">觀看完整播放清單 <span aria-hidden="true">→</span></a>
-      </div>
-      <div class="works" id="w-event"></div>
-      <div class="more-wrap"><button class="more" id="m-event" hidden>顯示更多作品（剩 <span></span> 支）</button></div>
-    </div>
+    <div class="panel" role="tabpanel" id="p-short" aria-labelledby="t-short"><div id="w-short"></div></div>
+    <div class="panel" role="tabpanel" id="p-event" aria-labelledby="t-event"><div id="w-event"></div></div>
   </div>
 </section>
 
 <!-- ============ ABOUT ============ -->
-<section class="block statement" id="about">
-  <div class="wrap about">
-    <div class="rv">
-      <div class="eyebrow" style="margin-bottom:24px">About</div>
-      <h2>Sylvia</h2>
-      <div class="role">霂影像有限公司 負責人<br>導演・攝影師・剪接師</div>
+<section class="section" id="about" style="background:var(--bg-soft)">
+  <div class="container">
+    <div class="section-header rv">
+      <span class="caption index">04 — About</span>
+      <h2 class="h1">關於我們</h2>
     </div>
-    <div class="rv">
-      <p class="lead">擁有四年以上影像工作經驗，專注為創作者與品牌製作剛剛好的影片。</p>
-      <div class="who">
-        <span>藝人</span><span>YouTuber</span><span>KOL</span><span>Influencer</span><span>品牌</span>
+    <div class="about-grid">
+      <div class="rv">
+        <div class="about-name">Sylvia</div>
+        <div class="about-role">霂影像有限公司 負責人<br>導演・攝影師・剪接師</div>
+      </div>
+      <div class="rv">
+        <p class="lede">擁有四年以上影像工作經驗，專注為創作者與品牌製作剛剛好的影片。</p>
+        <div class="tags"><span>藝人</span><span>YouTuber</span><span>KOL</span><span>Influencer</span><span>品牌</span></div>
+        <ul class="stats">
+          <li><span class="idx">01</span>與多位藝人、YouTuber、KOL、Influencer 長期合作</li>
+          <li><span class="idx">02</span>拍攝過帶狀訪談節目、實境秀與各類 YouTube 內容</li>
+          <li><span class="idx">03</span>擅長掌握影片節奏、梳理剪輯邏輯，極度注重整體美感</li>
+          <li><span class="idx">04</span>自營 IG 帳號「哇勒探吉」，深知創作者經營與社群內容</li>
+          <li><span class="idx">05</span>具領導與溝通能力，能整合團隊需求完成任務</li>
+        </ul>
       </div>
     </div>
-    <ul class="rv">
-      <li><i>01</i>與多位藝人、YouTuber、KOL、Influencer 長期合作</li>
-      <li><i>02</i>拍攝過帶狀訪談節目與各類 YouTube 內容</li>
-      <li><i>03</i>擅長掌握影片節奏、梳理剪輯邏輯，極度注重整體美感</li>
-      <li><i>04</i>自營 IG 帳號「哇勒探吉」，深知創作者經營與社群內容</li>
-      <li><i>05</i>具領導與溝通能力，能整合團隊需求完成任務</li>
-    </ul>
   </div>
 </section>
 
 <!-- ============ WORKFLOW ============ -->
-<section class="block" id="workflow">
-  <div class="wrap">
-    <div class="head rv">
-      <div class="eyebrow">Workflow</div>
+<section class="section" id="workflow">
+  <div class="container">
+    <div class="section-header rv">
+      <span class="caption index">05 — Workflow</span>
       <div>
-        <h2>合作流程</h2>
+        <h2 class="h1">合作流程</h2>
         <p>清楚的流程，讓每一次合作都在預期之內。</p>
       </div>
     </div>
-    <div class="flow">
-      <div class="step rv"><div class="n">01</div><h4>需求訪談</h4><p>了解目標、受眾、平台與預算。</p></div>
-      <div class="step rv"><div class="n">02</div><h4>腳本企劃</h4><p>提出故事架構、分鏡與拍攝規劃。</p></div>
-      <div class="step rv"><div class="n">03</div><h4>報價確認</h4><p>確認內容範圍、時程並簽約。</p></div>
-      <div class="step rv"><div class="n">04</div><h4>拍攝執行</h4><p>精簡團隊進場，有效率完成拍攝。</p></div>
-      <div class="step rv"><div class="n">05</div><h4>剪輯後製</h4><p>剪輯、調色、字幕、音效包裝。</p></div>
-      <div class="step rv"><div class="n">06</div><h4>修改交付</h4><p>依回饋修改，交付各平台規格成片。</p></div>
-    </div>
+    <table class="flow rv">
+      <thead><tr><th>Step</th><th>階段</th><th>內容</th></tr></thead>
+      <tbody>
+        <tr><td class="idx">01</td><td class="step">需求訪談</td><td class="desc">了解目標、受眾、平台與預算</td></tr>
+        <tr><td class="idx">02</td><td class="step">腳本企劃</td><td class="desc">提出故事架構、分鏡與拍攝規劃</td></tr>
+        <tr><td class="idx">03</td><td class="step">報價確認</td><td class="desc">確認內容範圍、時程並簽約</td></tr>
+        <tr><td class="idx">04</td><td class="step">拍攝執行</td><td class="desc">精簡團隊進場，有效率完成拍攝</td></tr>
+        <tr><td class="idx">05</td><td class="step">剪輯後製</td><td class="desc">剪輯、調色、字幕、音效包裝</td></tr>
+        <tr><td class="idx">06</td><td class="step">修改交付</td><td class="desc">依回饋修改，交付各平台規格成片</td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
 <!-- ============ CONTACT ============ -->
-<section class="block contact" id="contact">
-  <div class="wrap contact-top">
+<section class="section" id="contact" style="border-top:1px solid var(--line)">
+  <div class="container contact-grid">
     <div class="rv">
-      <div class="eyebrow">Get in touch</div>
-      <h2>Let’s make<br>something move.</h2>
-      <p style="color:var(--muted);max-width:440px;margin:0">告訴我們你的想法，我們會在 2 個工作天內回覆，並提供初步的企劃方向與報價。</p>
+      <span class="caption index mute">06 — Contact</span>
+      <h2 class="contact-title" style="margin-top:24px">Let’s make<br>something move.</h2>
+      <p style="color:var(--fg-soft);margin-top:var(--s-md);max-width:40ch">告訴我們你的想法，我們會在 2 個工作天內回覆，並提供初步的企劃方向與報價。</p>
       <dl class="info" id="info"></dl>
     </div>
     <form class="rv" id="form" novalidate>
-      <div class="field"><label for="f-name">姓名 *</label><input id="f-name" name="name" required autocomplete="name"></div>
-      <div class="field"><label for="f-co">公司／頻道名稱</label><input id="f-co" name="company" autocomplete="organization"></div>
-      <div class="field"><label for="f-mail">電子信箱 *</label><input id="f-mail" name="email" type="email" required autocomplete="email"></div>
-      <div class="field"><label for="f-tel">聯絡電話</label><input id="f-tel" name="phone" type="tel" autocomplete="tel"></div>
-      <div class="field"><label for="f-type">合作類型</label>
-        <select id="f-type" name="type">
-          <option>YouTube 長片</option><option>短影音</option><option>業配拍攝</option><option>單純剪輯</option><option>活動紀錄</option><option>其他</option>
-        </select>
+      <div class="form-group">
+        <div class="field"><label for="f-name">姓名</label><input id="f-name" name="name" required autocomplete="name" placeholder="必填"></div>
+        <div class="field"><label for="f-co">公司／頻道</label><input id="f-co" name="company" autocomplete="organization" placeholder="選填"></div>
+        <div class="field"><label for="f-mail">Email</label><input id="f-mail" name="email" type="email" required autocomplete="email" placeholder="必填"></div>
+        <div class="field"><label for="f-tel">電話</label><input id="f-tel" name="phone" type="tel" autocomplete="tel" placeholder="選填"></div>
       </div>
-      <div class="field"><label for="f-budget">預算範圍</label>
-        <select id="f-budget" name="budget">
-          <option>尚未確定</option><option>NT$30,000 以下</option><option>NT$30,000 – 80,000</option><option>NT$80,000 – 150,000</option><option>NT$150,000 以上</option>
-        </select>
+      <div class="form-group">
+        <div class="field"><label for="f-type">合作類型</label>
+          <select id="f-type" name="type"><option>YouTube 長片</option><option>短影音</option><option>業配拍攝</option><option>單純剪輯</option><option>活動紀錄</option><option>其他</option></select>
+        </div>
+        <div class="field"><label for="f-budget">預算範圍</label>
+          <select id="f-budget" name="budget"><option>尚未確定</option><option>NT$30,000 以下</option><option>NT$30,000 – 80,000</option><option>NT$80,000 – 150,000</option><option>NT$150,000 以上</option></select>
+        </div>
       </div>
-      <div class="field full"><label for="f-msg">需求說明 *</label><textarea id="f-msg" name="message" required placeholder="例如：想做一系列產品開箱短影音，預計 3 支，希望 12 月上線"></textarea></div>
-      <div class="submit">
-        <span class="form-note" id="form-note">送出後會開啟你的郵件程式，帶入以上內容。</span>
-        <button class="btn" type="submit">送出需求 <span aria-hidden="true">→</span></button>
+      <div class="form-group">
+        <div class="field stack"><label for="f-msg">需求說明</label><textarea id="f-msg" name="message" required placeholder="例如：想做一系列產品開箱短影音，預計 3 支，希望 12 月上線"></textarea></div>
       </div>
+      <button class="btn" type="submit">送出需求</button>
+      <p class="form-note" id="form-note">送出後會開啟你的郵件程式，帶入以上內容。</p>
     </form>
   </div>
 </section>
 
 </main>
 
-<!-- ============ FOOTER ============ -->
 <footer>
-  <div class="wrap">
-    <div class="foot">
-      <div class="big">MOVE.</div>
-      <nav aria-label="頁尾選單">
-        <a href="#services">服務項目</a><a href="#works">作品集</a><a href="#about">關於我們</a><a href="#contact">聯絡我們</a>
-        <a href="https://www.youtube.com/playlist?list=PL9GynfDuKgKEW5Cv2VxNSR-kYl_6Idnps" target="_blank" rel="noopener">YouTube</a>
-      </nav>
-    </div>
-    <div class="copy">
-      <span>© <span id="yr"></span> 霂影像有限公司 Move Studio. All rights reserved.</span>
-      <span>YouTube・Shorts・Branded Content・Editing</span>
-    </div>
+  <div class="container foot">
+    <span class="caption">© <span id="yr"></span> 霂影像有限公司 Move Studio</span>
+    <nav aria-label="頁尾選單">
+      <a href="#services">服務</a><a href="#works">作品</a><a href="#about">關於</a><a href="#contact">聯絡</a>
+      <a href="https://www.youtube.com/playlist?list=PL9GynfDuKgKEW5Cv2VxNSR-kYl_6Idnps" target="_blank" rel="noopener">YouTube ↗</a>
+    </nav>
   </div>
 </footer>
 
@@ -602,11 +487,12 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line)}
 (function(){
   const YT = "https://www.youtube-nocookie.com/embed/";
   const ytAttrs = 'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen';
+  const pad = n => String(n).padStart(2, '0');
+  const esc = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const playIcon = '<svg width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><path d="M0 0l12 7-12 7z" fill="#0a0a0a"/></svg>';
 
   /* Nav */
   const nav = document.getElementById('nav'), burger = document.getElementById('burger');
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
-  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
   burger.addEventListener('click', () => {
     const open = nav.classList.toggle('open');
     burger.setAttribute('aria-expanded', open);
@@ -616,129 +502,122 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line)}
     nav.classList.remove('open'); burger.setAttribute('aria-expanded', false);
   }));
 
-  /* Playlists */
-  document.querySelectorAll('[data-pl-link]').forEach(a => {
-    a.href = "https://www.youtube.com/playlist?list=" + CONFIG.playlists[a.dataset.plLink];
-  });
+  /* Cards */
+  const card = (w, i, limit) => `
+    <div class="work${i >= limit ? ' hidden' : ''}">
+      <button class="card" data-yt="${w.id}" aria-label="播放：${esc(w.title || 'YouTube 影片')}">
+        <img src="https://i.ytimg.com/vi/${w.id}/hqdefault.jpg" alt="" loading="lazy">
+        <span class="play">${playIcon}</span>
+      </button>
+      ${w.title ? `<div class="t">${esc(w.title)}</div>` : ''}
+    </div>`;
+  const group = (name, items, limit) => `
+    <div class="group">
+      <div class="group-head"><h3>${esc(name)}</h3><span class="caption mute">${pad(items.length)} Videos</span></div>
+      <div class="grid">${items.map((w, i) => card(w, i, limit)).join('')}</div>
+      ${items.length > limit ? `<button class="more" data-more>看更多 ${items.length - limit} 支 <span aria-hidden="true">↓</span></button>` : ''}
+    </div>`;
+  const empty = (title, key) => `
+    <div class="empty-state">
+      <span class="caption mute">Coming soon</span>
+      <h3>${title}作品整理中</h3>
+      <p>先到 YouTube 播放清單看完整作品。</p>
+      <a class="pl-link" href="https://www.youtube.com/playlist?list=${CONFIG.playlists[key]}" target="_blank" rel="noopener">開啟播放清單 <span class="arrow">↗</span></a>
+    </div>`;
 
-  /* Works grids：縮圖點擊後直接在頁面內播放；每次顯示 9 支，按「顯示更多」再展開 */
-  const PAGE = 9;
-  const playIcon = '<svg width="16" height="18" viewBox="0 0 16 18" aria-hidden="true"><path d="M0 0l16 9-16 9z" fill="#111"/></svg>';
-  const esc = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  function renderWorks(key, perRow){
-    const box = document.getElementById('w-' + key);
+  /* YouTube 長片：頻道合作（依創作者分組）／實境秀／業配拍攝 */
+  const all = CONFIG.works.long || [];
+  const subs = { channel: all.filter(w => !w.cat), reality: all.filter(w => w.cat === 'reality'), sponsored: all.filter(w => w.cat === 'sponsored') };
+  const subTitles = { reality: '圍棋實境秀｜弈世界玩家 · 嘉嘉老師GO', sponsored: '業配拍攝' };
+  const longBox = document.getElementById('w-long');
+  function drawLong(sub){
+    if (sub !== 'channel'){ longBox.innerHTML = group(subTitles[sub], subs[sub], 99); return; }
+    const groups = new Map();
+    subs.channel.forEach(w => {
+      const k = w.client || '其他合作';
+      if (!groups.has(k)) groups.set(k, []);
+      groups.get(k).push(w);
+    });
+    longBox.innerHTML = [...groups].map(([k, items]) => group(k, items, 3)).join('');
+  }
+  const subBtns = document.querySelectorAll('#seg-sub button');
+  subBtns.forEach(b => {
+    b.querySelector('sup').textContent = pad(subs[b.dataset.sub].length);
+    b.addEventListener('click', () => {
+      subBtns.forEach(x => x.setAttribute('aria-pressed', x === b));
+      drawLong(b.dataset.sub);
+    });
+  });
+  drawLong('channel');
+  document.getElementById('c-long').textContent = pad(all.length);
+
+  /* 短影音、活動紀錄 */
+  [['short', '短影音'], ['event', '活動紀錄']].forEach(([key, title]) => {
     const list = CONFIG.works[key] || [];
-    document.getElementById('c-' + key).textContent = list.length ? String(list.length).padStart(2,'0') : '';
-    const cards = list.map((w, i) => `
-      <div class="work${i >= PAGE ? ' hidden' : ''}">
-        <button class="thumb" data-yt="${w.id}" aria-label="播放：${esc(w.title || 'YouTube 影片')}">
-          <img src="https://i.ytimg.com/vi/${w.id}/hqdefault.jpg" alt="" loading="lazy">
-          <span class="play">${playIcon}</span>
-        </button>
-        ${(w.title || w.client) ? `<div class="cap"><b>${esc(w.title || '')}</b>${w.client ? `<span>${esc(w.client)}</span>` : ''}</div>` : ''}
-      </div>`);
-    const total = Math.max(perRow, Math.ceil(Math.min(list.length, PAGE) / perRow) * perRow);
-    for (let i = list.length; i < total; i++){
-      cards.push(`<div class="work empty"><div class="thumb"><em>COMING SOON</em></div></div>`);
-    }
-    box.innerHTML = cards.join('');
-    const more = document.getElementById('m-' + key);
-    if (!more) return;
-    const update = () => {
-      const left = box.querySelectorAll('.work.hidden').length;
-      more.hidden = left === 0;
-      more.querySelector('span').textContent = left;
-    };
-    more.onclick = () => {
-      [...box.querySelectorAll('.work.hidden')].slice(0, PAGE).forEach(el => el.classList.remove('hidden'));
-      update();
-    };
-    update();
-  }
-  /* YouTube 長片：分「頻道合作」(依創作者分組) 與「實境秀」；清單順序 = 最新在前 */
-  function cardHTML(w, hidden){
-    return `<div class="work${hidden ? ' hidden' : ''}">
-        <button class="thumb" data-yt="${w.id}" aria-label="播放：${esc(w.title || 'YouTube 影片')}">
-          <img src="https://i.ytimg.com/vi/${w.id}/hqdefault.jpg" alt="" loading="lazy">
-          <span class="play">${playIcon}</span>
-        </button>
-        ${w.title ? `<div class="cap"><b>${esc(w.title)}</b></div>` : ''}
-      </div>`;
-  }
-  function renderLong(){
-    const all = CONFIG.works.long || [];
-    document.getElementById('c-long').textContent = String(all.length).padStart(2,'0');
-    const subs = { channel: all.filter(w => !w.cat), reality: all.filter(w => w.cat === 'reality'), sponsored: all.filter(w => w.cat === 'sponsored') };
-    const subTitles = { reality: '圍棋實境秀｜弈世界玩家 · 嘉嘉老師GO', sponsored: '業配拍攝' };
-    const box = document.getElementById('w-long');
-    const groupHTML = (name, items, limit) => `
-      <div class="group">
-        <div class="group-head"><h4>${esc(name)}</h4><span class="eyebrow">${String(items.length).padStart(2,'0')} Videos</span></div>
-        <div class="works">${items.map((w, i) => cardHTML(w, i >= limit)).join('')}</div>
-        ${items.length > limit ? `<div class="more-wrap"><button class="more" data-more>看更多（${items.length - limit} 支）</button></div>` : ''}
-      </div>`;
-    const draw = sub => {
-      if (sub !== 'channel'){
-        box.innerHTML = groupHTML(subTitles[sub], subs[sub], 99);
-        return;
-      }
-      const groups = new Map();
-      subs.channel.forEach(w => {
-        const k = w.client || '品牌・企業委託';
-        if (!groups.has(k)) groups.set(k, []);
-        groups.get(k).push(w);
-      });
-      box.innerHTML = [...groups].map(([k, items]) => groupHTML(k, items, 3)).join('');
-    };
-    const chips = document.querySelectorAll('#p-long .chip');
-    chips.forEach(ch => {
-      ch.querySelector('sup').textContent = String(subs[ch.dataset.sub].length).padStart(2,'0');
-      ch.addEventListener('click', () => {
-        chips.forEach(c => c.setAttribute('aria-pressed', c === ch));
-        draw(ch.dataset.sub);
-      });
-    });
-    box.addEventListener('click', e => {
-      const b = e.target.closest('[data-more]');
-      if (!b) return;
-      b.closest('.group').querySelectorAll('.work.hidden').forEach(x => x.classList.remove('hidden'));
-      b.parentElement.remove();
-    });
-    draw('channel');
-  }
-  renderLong(); renderWorks('short', 4); renderWorks('event', 3);
-  document.addEventListener('click', e => {
-    const t = e.target.closest('.thumb[data-yt]');
-    if (!t) return;
-    t.innerHTML = `<iframe src="${YT}${t.dataset.yt}?autoplay=1&rel=0" title="YouTube 影片" ${ytAttrs}></iframe>`;
-    t.removeAttribute('data-yt');
+    document.getElementById('c-' + key).textContent = list.length ? pad(list.length) : '';
+    document.getElementById('w-' + key).innerHTML = list.length ? group(title, list, 9) : empty(title, key);
   });
 
-  /* Tabs */
-  const tabs = document.querySelectorAll('.tab');
-  tabs.forEach(tab => tab.addEventListener('click', () => {
-    tabs.forEach(t => t.setAttribute('aria-selected', t === tab));
-    document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === tab.getAttribute('aria-controls')));
-  }));
+  /* 點擊：播放／看更多 */
+  document.addEventListener('click', e => {
+    const c = e.target.closest('.card[data-yt]');
+    if (c){
+      c.innerHTML = `<iframe src="${YT}${c.dataset.yt}?autoplay=1&rel=0" title="YouTube 影片" ${ytAttrs}></iframe>`;
+      c.removeAttribute('data-yt');
+      return;
+    }
+    const m = e.target.closest('[data-more]');
+    if (m){
+      m.closest('.group').querySelectorAll('.work.hidden').forEach(x => x.classList.remove('hidden'));
+      m.remove();
+    }
+  });
 
-  /* Contact info */
-  const c = CONFIG.contact, info = document.getElementById('info');
+  /* iOS segmented control（滑動指示器） */
+  const seg = document.getElementById('seg-main'), ind = seg.querySelector('.thumb-ind');
+  const tabs = [...seg.querySelectorAll('[role=tab]')], plLink = document.getElementById('pl-link');
+  const plKeys = { 'p-long': 'long', 'p-short': 'short', 'p-event': 'event' };
+  function moveInd(){
+    const t = tabs.find(x => x.getAttribute('aria-selected') === 'true');
+    ind.style.width = t.offsetWidth + 'px';
+    ind.style.transform = `translateX(${t.offsetLeft - 3}px)`;
+  }
+  function selectTab(t){
+    tabs.forEach(x => x.setAttribute('aria-selected', x === t));
+    document.querySelectorAll('#works .panel').forEach(p => p.classList.toggle('active', p.id === t.getAttribute('aria-controls')));
+    plLink.href = 'https://www.youtube.com/playlist?list=' + CONFIG.playlists[plKeys[t.getAttribute('aria-controls')]];
+    moveInd();
+  }
+  tabs.forEach(t => t.addEventListener('click', () => selectTab(t)));
+  seg.addEventListener('keydown', e => {
+    const i = tabs.findIndex(x => x.getAttribute('aria-selected') === 'true');
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+      const n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+      selectTab(n); n.focus();
+    }
+  });
+  selectTab(tabs[0]);
+  window.addEventListener('resize', moveInd);
+  if (document.fonts) document.fonts.ready.then(moveInd);
+
+  /* 聯絡資訊 */
+  const c = CONFIG.contact;
   const rows = [
-    ['EMAIL', c.email ? `<a href="mailto:${c.email}">${c.email}</a>` : '［你的 Email］'],
+    ['Email', c.email ? `<a href="mailto:${c.email}">${c.email}</a>` : '［你的 Email］'],
     ['LINE', c.line || '［LINE ID］'],
-    ['PHONE', c.phone || '［聯絡電話］'],
-    ['BASED IN', '新北市・台北市']
+    ['Phone', c.phone || '［聯絡電話］'],
+    ['Based in', '新北市・台北市']
   ];
-  info.innerHTML = rows.map(r => `<div><dt>${r[0]}</dt><dd>${r[1]}</dd></div>`).join('');
+  document.getElementById('info').innerHTML = rows.map(r => `<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join('');
 
-  /* Form → mailto */
+  /* 表單 → mailto */
   document.getElementById('form').addEventListener('submit', e => {
     e.preventDefault();
     const f = e.target, note = document.getElementById('form-note');
     if (!f.name.value.trim() || !f.email.value.trim() || !f.message.value.trim()){
-      note.textContent = '請填寫姓名、電子信箱與需求說明。'; note.style.color = '#b42318'; return;
+      note.textContent = '請填寫姓名、Email 與需求說明。'; note.style.color = 'var(--accent)'; return;
     }
-    if (!c.email){ note.textContent = '尚未設定收件 Email（請在 CONFIG.contact.email 填入）。'; note.style.color = '#b42318'; return; }
+    if (!c.email){ note.textContent = '尚未設定收件 Email（請在 CONFIG.contact.email 填入）。'; note.style.color = 'var(--accent)'; return; }
     const body = `姓名：${f.name.value}\n公司／頻道：${f.company.value}\nEmail：${f.email.value}\n電話：${f.phone.value}\n合作類型：${f.type.value}\n預算：${f.budget.value}\n\n需求說明：\n${f.message.value}`;
     location.href = `mailto:${c.email}?subject=${encodeURIComponent('【合作洽詢】' + f.type.value + '｜' + f.name.value)}&body=${encodeURIComponent(body)}`;
     note.textContent = '已開啟郵件程式，確認內容後按下寄出即可。'; note.style.color = '';
@@ -747,7 +626,7 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line)}
   /* Reveal */
   const io = new IntersectionObserver(es => es.forEach(en => {
     if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
-  }), {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
   document.getElementById('yr').textContent = new Date().getFullYear();
