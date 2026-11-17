@@ -320,13 +320,82 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
   .seg{display:grid;width:100%}
   .seg button{padding:8px 10px}
   .flow td.step{width:auto}
-  .flow th:last-child,.flow td.desc{display:none}
 }
 @media (max-width:520px){
   .grid{grid-template-columns:1fr}
   .channels{grid-template-columns:1fr 1fr}
   .reels{grid-template-columns:1fr}
   .pillars{grid-template-columns:1fr}
+}
+
+/* ---------- Mobile（iOS 風格：橫向滑動卡片列） ---------- */
+@media (max-width:860px){
+  body{font-size:15px}
+  .hero{padding:112px 0 64px}
+  .hero-issue{font-size:11px;margin-bottom:28px;gap:8px 14px}
+  .hero-title{font-size:clamp(38px,11.5vw,52px);line-height:1.15;letter-spacing:-.02em}
+  .hero-en{font-size:11px;letter-spacing:.14em;margin-top:20px}
+  .hero-meta{margin-top:40px;row-gap:4px;padding:18px 18px 10px;background:var(--bg-soft);border-radius:var(--r-lg)}
+  .hero-meta dt{padding-top:0}
+  .hero-meta dd{margin-bottom:12px;font-size:14px}
+  .hero-cta{margin-top:36px;font-size:16px}
+  .section{padding:72px 0}
+  .h1{font-size:30px}
+  .section-header p{font-size:14px;margin-top:10px}
+  .row{padding:22px 0}
+  .row .name{font-size:18px}
+  .lede{font-size:21px;line-height:1.6}
+  .pillars{margin-top:var(--s-md);padding-top:var(--s-md);gap:28px}
+  .pillar h3{font-size:19px;margin:10px 0 6px}
+
+  /* 作品：分類列 */
+  .works-bar{gap:4px;margin-bottom:20px}
+  .seg button{font-size:13px;padding:8px 6px}
+  .seg.small{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -20px 32px;padding:0 20px}
+  .seg.small::-webkit-scrollbar{display:none}
+  .seg.small button{flex:0 0 auto}
+  .subbar{margin-bottom:36px}
+
+  /* 作品：每位創作者一列，左右滑動 */
+  .group{margin-bottom:40px}
+  .group-head{margin-bottom:14px;padding-bottom:10px}
+  .group-head h3{font-size:16px}
+  .grid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 -20px;padding:0 20px 4px;scroll-padding-left:20px}
+  .grid::-webkit-scrollbar{display:none}
+  .grid .work{flex:0 0 76%;scroll-snap-align:start}
+  .grid .work.hidden{display:block}
+  .group > .more{display:none}
+  .card .play{width:34px;height:34px;left:10px;bottom:10px}
+  .work .t{font-size:13px;margin-top:10px}
+
+  /* 短影音：Reels 左右滑動 */
+  .reels{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 -20px;padding:0 20px 4px;align-items:flex-start}
+  .reels::-webkit-scrollbar{display:none}
+  .reels .instagram-media{flex:0 0 84%!important;width:84%!important;scroll-snap-align:start}
+
+  /* 流程：每步兩行 */
+  .flow thead{display:none}
+  .flow tr{display:grid;grid-template-columns:44px 1fr;row-gap:2px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .flow td{border:0;padding:0}
+  .flow td.idx{grid-row:span 2;width:auto;padding-top:3px}
+  .flow td.step{font-size:16px}
+  .flow td.desc{font-size:14px}
+
+  /* 合作頻道 */
+  .channels{grid-template-columns:repeat(3,1fr);padding-top:var(--s-md);gap:28px 8px}
+  .channels img{width:76px;height:76px}
+  .channels .nm{font-size:13px}
+  .channels .sb{font-size:10px}
+
+  /* 聯絡 */
+  .contact-title{font-size:40px}
+  .mail{margin-top:var(--s-md);padding:20px;border:0;background:var(--bg-soft);border-radius:var(--r-lg)}
+  .mail-addr{font-size:20px;border-bottom:0}
+  .mail-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+  .mail-actions .btn{padding:0 12px;font-size:15px}
+  .btn.ghost{background:#fff}
+
+  .foot{flex-direction:column;align-items:flex-start;gap:18px}
 }
 </style>
 </head>
