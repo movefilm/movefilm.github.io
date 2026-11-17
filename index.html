@@ -30,14 +30,14 @@ const CONFIG = {
   works: {
     long:  [
       {"id": "UBe_mhVOEo8", "title": "「爸媽生存王系列」帶兩個混血寶寶玩台灣人的童年！劍湖山親子兩天一夜，蒳家人誰最有膽？Taiwan Amusement Park Challenge with Kids", "client": "佳娜祖雄“蒳家人” TT FAMILY"},
-      {"id": "Z_QzWwQFdbY", "title": "【圍棋實境秀EP8】終局之戰黑嘉嘉當裁判！誰能贏下關鍵對弈奪得冠軍？｜弈世界玩家", "client": "嘉嘉老師GO"},
-      {"id": "CLoWV3o5x0U", "title": "【圍棋實境秀EP7】「地獄級難度」盲棋還讓6子！亞運金牌這次會輸給2個圍棋菜鳥嗎？｜弈世界玩家", "client": "嘉嘉老師GO"},
-      {"id": "Ke67iKp8TaM", "title": "【圍棋實境秀EP6】讀秒下棋像拆炸彈！心跳飆破150連醫師都驚訝 ft.賴廷榮醫師｜弈世界玩家", "client": "嘉嘉老師GO"},
-      {"id": "5uPsjY-ThYI", "title": "【圍棋實境秀EP5】5分鐘就被小朋友「震撼教育」😮 偶像們移地訓練大崩潰｜弈世界玩家", "client": "嘉嘉老師GO"},
-      {"id": "j15H6JKFuxI", "title": "【圍棋實境秀EP4】隱藏攝影機偷偷測專注力！3干擾+1魔王她們能挑戰成功？｜弈世界玩家", "client": "嘉嘉老師GO"},
-      {"id": "aVTcDL4HoQE", "title": "【圍棋實境秀EP3】1分之差生死戰！她想逆轉就要全答對｜弈世界玩家", "client": "嘉嘉老師GO"},
-      {"id": "WnIGgVe9xew", "title": "【圍棋實境秀EP2】第一堂課就爆衝突？「秘密任務」後師生還能聯手搶分嗎？｜弈世界玩家", "client": "嘉嘉老師GO"},
-      {"id": "Q4twdIxRMYc", "title": "【圍棋實境秀EP1】女偶像勇闖弈世界！職業九段 vs 20 年名師..誰能讓學生3個月從0到贏？｜弈世界玩家", "client": "嘉嘉老師GO"},
+      {"id": "Z_QzWwQFdbY", "title": "【圍棋實境秀EP8】終局之戰黑嘉嘉當裁判！誰能贏下關鍵對弈奪得冠軍？｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
+      {"id": "CLoWV3o5x0U", "title": "【圍棋實境秀EP7】「地獄級難度」盲棋還讓6子！亞運金牌這次會輸給2個圍棋菜鳥嗎？｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
+      {"id": "Ke67iKp8TaM", "title": "【圍棋實境秀EP6】讀秒下棋像拆炸彈！心跳飆破150連醫師都驚訝 ft.賴廷榮醫師｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
+      {"id": "5uPsjY-ThYI", "title": "【圍棋實境秀EP5】5分鐘就被小朋友「震撼教育」😮 偶像們移地訓練大崩潰｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
+      {"id": "j15H6JKFuxI", "title": "【圍棋實境秀EP4】隱藏攝影機偷偷測專注力！3干擾+1魔王她們能挑戰成功？｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
+      {"id": "aVTcDL4HoQE", "title": "【圍棋實境秀EP3】1分之差生死戰！她想逆轉就要全答對｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
+      {"id": "WnIGgVe9xew", "title": "【圍棋實境秀EP2】第一堂課就爆衝突？「秘密任務」後師生還能聯手搶分嗎？｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
+      {"id": "Q4twdIxRMYc", "title": "【圍棋實境秀EP1】女偶像勇闖弈世界！職業九段 vs 20 年名師..誰能讓學生3個月從0到贏？｜弈世界玩家", "client": "嘉嘉老師GO", "cat": "reality"},
       {"id": "Slr5yVvrzUw", "title": "真假黑嘉嘉對決！五人聯手能打敗最高等級「AI黑嘉嘉」嗎？ ft.亞運金牌許皓鋐、職業九段蕭正浩", "client": "嘉嘉老師GO"},
       {"id": "Xe5PwpBgGPg", "title": "黑嘉嘉手忙腳亂笑到不行！連亞運金牌也被難倒的「圍棋術語黑白猜」", "client": "嘉嘉老師GO"},
       {"id": "Nxvf0QETbqw", "title": "職業棋士的大腦太可怕！黑嘉嘉看1分鐘棋譜就認出自己的比賽？", "client": "嘉嘉老師GO"},
@@ -225,6 +225,15 @@ section{position:relative}
 .more[hidden]{display:none}
 .work.empty .thumb{cursor:default;border:1px dashed #d4d4d0;background:#fbfbfa;display:flex;align-items:center;justify-content:center}
 .work.empty .thumb em{font-style:normal;font-family:"Inter";font-size:12px;letter-spacing:.2em;color:#8a8a86}
+
+.subtabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:10px 20px;font-size:14px;min-height:44px;color:var(--ink-2);transition:background .3s,color .3s,border-color .3s}
+.chip sup{font-family:"Inter";font-size:11px;margin-left:4px}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.group{margin-bottom:72px}
+.group-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid var(--ink);padding-top:18px;margin-bottom:24px}
+.group-head h4{font-family:var(--serif);font-weight:500;font-size:20px;margin:0}
+.group .more-wrap{margin-top:32px}
 
 /* ---------- About ---------- */
 .about{display:grid;grid-template-columns:240px 1fr 1fr;gap:48px}
@@ -458,8 +467,11 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line)}
         </div>
         <a class="link-btn" data-pl-link="long" href="#" target="_blank" rel="noopener">觀看完整播放清單 <span aria-hidden="true">→</span></a>
       </div>
-      <div class="works" id="w-long"></div>
-      <div class="more-wrap"><button class="more" id="m-long" hidden>顯示更多作品（剩 <span></span> 支）</button></div>
+      <div class="subtabs" aria-label="YouTube 長片分類">
+        <button class="chip" data-sub="channel" aria-pressed="true">頻道合作<sup></sup></button>
+        <button class="chip" data-sub="reality" aria-pressed="false">實境秀<sup></sup></button>
+      </div>
+      <div id="w-long"></div>
     </div>
 
     <!-- 短影音 -->
@@ -644,7 +656,57 @@ footer{padding:80px 0 40px;border-top:1px solid var(--line)}
     };
     update();
   }
-  renderWorks('long', 3); renderWorks('short', 4); renderWorks('event', 3);
+  /* YouTube 長片：分「頻道合作」(依創作者分組) 與「實境秀」；清單順序 = 最新在前 */
+  function cardHTML(w, hidden){
+    return `<div class="work${hidden ? ' hidden' : ''}">
+        <button class="thumb" data-yt="${w.id}" aria-label="播放：${esc(w.title || 'YouTube 影片')}">
+          <img src="https://i.ytimg.com/vi/${w.id}/hqdefault.jpg" alt="" loading="lazy">
+          <span class="play">${playIcon}</span>
+        </button>
+        ${w.title ? `<div class="cap"><b>${esc(w.title)}</b></div>` : ''}
+      </div>`;
+  }
+  function renderLong(){
+    const all = CONFIG.works.long || [];
+    document.getElementById('c-long').textContent = String(all.length).padStart(2,'0');
+    const subs = { channel: all.filter(w => w.cat !== 'reality'), reality: all.filter(w => w.cat === 'reality') };
+    const box = document.getElementById('w-long');
+    const groupHTML = (name, items, limit) => `
+      <div class="group">
+        <div class="group-head"><h4>${esc(name)}</h4><span class="eyebrow">${String(items.length).padStart(2,'0')} Videos</span></div>
+        <div class="works">${items.map((w, i) => cardHTML(w, i >= limit)).join('')}</div>
+        ${items.length > limit ? `<div class="more-wrap"><button class="more" data-more>看更多（${items.length - limit} 支）</button></div>` : ''}
+      </div>`;
+    const draw = sub => {
+      if (sub === 'reality'){
+        box.innerHTML = groupHTML('圍棋實境秀｜弈世界玩家 · 嘉嘉老師GO', subs.reality, 99);
+        return;
+      }
+      const groups = new Map();
+      subs.channel.forEach(w => {
+        const k = w.client || '品牌・企業委託';
+        if (!groups.has(k)) groups.set(k, []);
+        groups.get(k).push(w);
+      });
+      box.innerHTML = [...groups].map(([k, items]) => groupHTML(k, items, 3)).join('');
+    };
+    const chips = document.querySelectorAll('#p-long .chip');
+    chips.forEach(ch => {
+      ch.querySelector('sup').textContent = String(subs[ch.dataset.sub].length).padStart(2,'0');
+      ch.addEventListener('click', () => {
+        chips.forEach(c => c.setAttribute('aria-pressed', c === ch));
+        draw(ch.dataset.sub);
+      });
+    });
+    box.addEventListener('click', e => {
+      const b = e.target.closest('[data-more]');
+      if (!b) return;
+      b.closest('.group').querySelectorAll('.work.hidden').forEach(x => x.classList.remove('hidden'));
+      b.parentElement.remove();
+    });
+    draw('channel');
+  }
+  renderLong(); renderWorks('short', 4); renderWorks('event', 3);
   document.addEventListener('click', e => {
     const t = e.target.closest('.thumb[data-yt]');
     if (!t) return;
