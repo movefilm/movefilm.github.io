@@ -100,6 +100,23 @@ const CONFIG = {
       { ig: "DIJNve5Tn0r" },
       { ig: "DHnq-FkyCxb" }
     ],
+    drama: [
+      { ig: "DRCFnN9jyZg" },
+      { ig: "DQrHuSSD-_T" },
+      { ig: "DQoaytzD37Q" },
+      { ig: "DQG9VU0D3m-" },
+      { ig: "DQEVgBAD0ba" },
+      { ig: "DItJECaR5VP" },
+      { ig: "DIlYXjwR-0J" },
+      { ig: "DIi1O_YRzUV" },
+      { ig: "DIgIb5qxPp7" },
+      { ig: "DIdig8Ixsh3" },
+      { ig: "DGsTo45Rt8E" },
+      { ig: "DGp6oJHPi1q" },
+      { ig: "DGiU9IPv4bx" },
+      { ig: "DGfZbFsxCTG" },
+      { ig: "DGc-FWTxU0T" }
+    ],
     event: [
       {"id": "tBcHb1ipQcE", "date": "2025-04-30", "title": "《candy》 簽唱會邱勝翊&邱宇辰", "client": ""},
       {"id": "X9dDEl4xtUE", "date": "2025-01-22", "title": "金鐘獎Vlog_夏和熙", "client": ""},
@@ -465,6 +482,11 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
 
   .foot{flex-direction:column;align-items:flex-start;gap:18px}
 }
+@media (max-width:480px){
+  .seg:not(.small){grid-auto-columns:auto}
+  .seg:not(.small) button{padding:8px 4px}
+  .seg:not(.small) button sup{display:none}
+}
 </style>
 </head>
 <body>
@@ -561,6 +583,7 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
         <span class="thumb-ind" aria-hidden="true"></span>
         <button role="tab" aria-selected="true" aria-controls="p-long" id="t-long">YouTube 長片<sup id="c-long"></sup></button>
         <button role="tab" aria-selected="false" aria-controls="p-short" id="t-short">短影音<sup id="c-short"></sup></button>
+        <button role="tab" aria-selected="false" aria-controls="p-drama" id="t-drama">直式短劇<sup id="c-drama"></sup></button>
         <button role="tab" aria-selected="false" aria-controls="p-event" id="t-event">活動紀錄<sup id="c-event"></sup></button>
       </div>
       <a class="pl-link" id="pl-link" href="#" target="_blank" rel="noopener">完整播放清單 <span class="arrow">↗</span></a>
@@ -576,6 +599,7 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
       <div id="w-long"></div>
     </div>
     <div class="panel" role="tabpanel" id="p-short" aria-labelledby="t-short"><div id="w-short"></div></div>
+    <div class="panel" role="tabpanel" id="p-drama" aria-labelledby="t-drama"><div id="w-drama"></div></div>
     <div class="panel" role="tabpanel" id="p-event" aria-labelledby="t-event"><div id="w-event"></div></div>
   </div>
 </section>
@@ -872,11 +896,12 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
   document.getElementById('c-long').textContent = pad(all.length);
 
   /* 短影音、活動紀錄 */
-  /* 短影音：Instagram Reels（切到分頁時才載入） */
-  const reels = CONFIG.works.short || [];
-  document.getElementById('c-short').textContent = reels.length ? pad(reels.length) : '';
+  /* 短影音、直式短劇：Instagram Reels（切到分頁時才載入） */
+  function reelTab(key, title){
+  const reels = CONFIG.works[key] || [];
+  document.getElementById('c-' + key).textContent = reels.length ? pad(reels.length) : '';
   let reelsShown = 0;
-  const reelBox = document.getElementById('w-short');
+  const reelBox = document.getElementById('w-' + key);
   function moreReels(){
     const next = reels.slice(reelsShown, reelsShown + 6);
     reelsShown += next.length;
@@ -892,13 +917,17 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
   function initReels(){
     if (reelBox.dataset.ready) return;
     reelBox.dataset.ready = '1';
-    if (!reels.length){ reelBox.innerHTML = empty('短影音', 'short'); return; }
+    if (!reels.length){ reelBox.innerHTML = empty(title, key); return; }
     reelBox.innerHTML = `<div class="reels"></div>`;
     moreReels();
     feed(reelBox.querySelector('.reels'), moreReels, () => reelsShown < reels.length);
-    const sc = document.createElement('script'); sc.async = true; sc.src = 'https://www.instagram.com/embed.js';
+    if (window.instgrm || document.getElementById('ig-embed')) return;
+    const sc = document.createElement('script'); sc.async = true; sc.id = 'ig-embed'; sc.src = 'https://www.instagram.com/embed.js';
     document.body.appendChild(sc);
   }
+  return initReels;
+  }
+  const reelInit = { 'p-short': reelTab('short', '短影音'), 'p-drama': reelTab('drama', '直式短劇') };
 
   [['event', '活動紀錄']].forEach(([key, title]) => {
     const list = (CONFIG.works[key] || []).slice().sort(byDate);
@@ -927,13 +956,15 @@ footer{padding:var(--s-lg) 0;border-top:1px solid var(--line)}
   /* iOS segmented control（滑動指示器） */
   const seg = document.getElementById('seg-main'), ind = seg.querySelector('.thumb-ind');
   const tabs = [...seg.querySelectorAll('[role=tab]')], plLink = document.getElementById('pl-link');
-  const plKeys = { 'p-long': 'long', 'p-short': 'short', 'p-event': 'event' };
+  const plKeys = { 'p-long': 'long', 'p-short': 'short', 'p-drama': '', 'p-event': 'event' };
   const moveInd = slideBar(seg, tabs, x => x.getAttribute('aria-selected') === 'true');
   function selectTab(t){
     tabs.forEach(x => x.setAttribute('aria-selected', x === t));
     document.querySelectorAll('#works .panel').forEach(p => p.classList.toggle('active', p.id === t.getAttribute('aria-controls')));
-    plLink.href = 'https://www.youtube.com/playlist?list=' + CONFIG.playlists[plKeys[t.getAttribute('aria-controls')]];
-    if (t.getAttribute('aria-controls') === 'p-short') initReels();
+    const plKey = plKeys[t.getAttribute('aria-controls')];
+    plLink.style.visibility = plKey ? '' : 'hidden';
+    if (plKey) plLink.href = 'https://www.youtube.com/playlist?list=' + CONFIG.playlists[plKey];
+    if (reelInit[t.getAttribute('aria-controls')]) reelInit[t.getAttribute('aria-controls')]();
     moveInd();
     if (t.getAttribute('aria-controls') === 'p-long') subHome();
   }
